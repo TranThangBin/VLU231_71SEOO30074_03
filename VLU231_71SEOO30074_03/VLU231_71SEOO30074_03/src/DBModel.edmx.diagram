@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a23a981cf714a0db0b6a7b5f126603b" Name="Diagram1">
+        <EntityTypeShape EntityType="QLDKHPModel.Admin" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.Diem" Width="1.5" PointX="10.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.GiangVien" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.Khoa" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.LopHp" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.MonHoc" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.SinhVien" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="QLDKHPModel.FK__Admin__MaTk__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__Diem__MaHp__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__Diem__MaSinhVien__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__GiangVien__MaKho__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__GiangVien__MaTk__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__MonHoc__MaKhoa__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__SinhVien__MaKhoa__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__LopHp__MaMonHoc__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__MonHoc__MaTienQu__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.FK__SinhVien__MaTk__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.GiangvienHp" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDKHPModel.SinhvienHp" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

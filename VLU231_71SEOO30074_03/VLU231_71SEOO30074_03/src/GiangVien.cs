@@ -21,16 +21,11 @@ namespace VLU231_71SEOO30074_03.src
         }
     
         public string Ma { get; set; }
+        public int Loai { get; set; }
         public string MaKhoa { get; set; }
-        public Nullable<int> MaTk { get; set; }
-        public string HoTen { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string QueQuan { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
-        public string DiaChi { get; set; }
     
+        public virtual NguoiDung NguoiDung { get; set; }
         public virtual Khoa Khoa { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHp> LopHps { get; set; }
     }

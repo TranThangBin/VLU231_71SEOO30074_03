@@ -64,8 +64,10 @@
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="src\BUS\AuthBUS.cs" />
+    <Compile Include="src\BUS\DiemBUS.cs" />
     <Compile Include="src\BUS\GiangVienBUS.cs" />
     <Compile Include="src\BUS\KhoaBUS.cs" />
+    <Compile Include="src\BUS\LopHpBUS.cs" />
     <Compile Include="src\BUS\MonHocBUS.cs" />
     <Compile Include="src\BUS\SinhVienBUS.cs" />
     <Compile Include="src\DBModel.Context.cs">

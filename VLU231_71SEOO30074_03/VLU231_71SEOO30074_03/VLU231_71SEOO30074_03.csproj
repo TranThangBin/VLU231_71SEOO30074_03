@@ -58,35 +58,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form Đăng Nhập.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form Đăng Nhập.Designer.cs">
-      <DependentUpon>Form Đăng Nhập.cs</DependentUpon>
+    <Compile Include="src\GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLOP.cs">
+    <Compile Include="src\GUI\Subject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLOP.Designer.cs">
-      <DependentUpon>FormLOP.cs</DependentUpon>
+    <Compile Include="src\GUI\Subject.Designer.cs">
+      <DependentUpon>Subject.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormQMK.cs">
+    <Compile Include="src\GUI\Forgot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQMK.Designer.cs">
-      <DependentUpon>FormQMK.cs</DependentUpon>
+    <Compile Include="src\GUI\Forgot.Designer.cs">
+      <DependentUpon>Forgot.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSV.cs">
+    <Compile Include="src\GUI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSV.Designer.cs">
-      <DependentUpon>FormSV.cs</DependentUpon>
+    <Compile Include="src\GUI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormĐKHP.cs">
+    <Compile Include="src\GUI\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormĐKHP.Designer.cs">
-      <DependentUpon>FormĐKHP.cs</DependentUpon>
+    <Compile Include="src\GUI\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,12 +126,6 @@
     <Compile Include="src\GiangVien.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\Index.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\GUI\Index.Designer.cs">
-      <DependentUpon>Index.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Khoa.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -142,31 +141,26 @@
     <Compile Include="src\SinhVien.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form Đăng Nhập.resx">
-      <DependentUpon>Form Đăng Nhập.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLOP.resx">
-      <DependentUpon>FormLOP.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\Subject.resx">
+      <DependentUpon>Subject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQMK.resx">
-      <DependentUpon>FormQMK.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\Forgot.resx">
+      <DependentUpon>Forgot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSV.resx">
-      <DependentUpon>FormSV.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormĐKHP.resx">
-      <DependentUpon>FormĐKHP.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -196,6 +190,7 @@
     <None Include="Resources\banner-yersin.jpg" />
     <None Include="Resources\134226_back_arrow_left_icon.png" />
     <None Include="Resources\172626_user_male_icon.png" />
+    <None Include="Resources\dfd2683c9701642c776e31d3b0d603a9.gif" />
     <Content Include="src\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>

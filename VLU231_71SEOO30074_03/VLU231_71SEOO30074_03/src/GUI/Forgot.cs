@@ -1,10 +1,11 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace VLU231_71SEOO30074_03.src.GUI
 {
-    public partial class Index : Form
+    public partial class Forgot : Form
     {
-        public Index()
+        public Forgot()
         {
             InitializeComponent();
         }

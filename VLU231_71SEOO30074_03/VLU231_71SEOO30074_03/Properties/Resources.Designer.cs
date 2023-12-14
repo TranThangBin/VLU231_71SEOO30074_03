@@ -99,5 +99,15 @@ namespace VLU231_71SEOO30074_03.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dfd2683c9701642c776e31d3b0d603a9 {
+            get {
+                object obj = ResourceManager.GetObject("dfd2683c9701642c776e31d3b0d603a9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

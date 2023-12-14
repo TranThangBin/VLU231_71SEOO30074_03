@@ -58,6 +58,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form Đăng Nhập.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form Đăng Nhập.Designer.cs">
+      <DependentUpon>Form Đăng Nhập.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLOP.Designer.cs">
+      <DependentUpon>FormLOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQMK.Designer.cs">
+      <DependentUpon>FormQMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSV.Designer.cs">
+      <DependentUpon>FormSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormĐKHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormĐKHP.Designer.cs">
+      <DependentUpon>FormĐKHP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Admin.cs">
@@ -112,6 +142,21 @@
     <Compile Include="src\SinhVien.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form Đăng Nhập.resx">
+      <DependentUpon>Form Đăng Nhập.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLOP.resx">
+      <DependentUpon>FormLOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQMK.resx">
+      <DependentUpon>FormQMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSV.resx">
+      <DependentUpon>FormSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormĐKHP.resx">
+      <DependentUpon>FormĐKHP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -120,6 +165,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -146,6 +192,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ảnh chụp màn hình 2023-12-12 232316.png" />
+    <None Include="Resources\banner-yersin.jpg" />
+    <None Include="Resources\134226_back_arrow_left_icon.png" />
+    <None Include="Resources\172626_user_male_icon.png" />
     <Content Include="src\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>

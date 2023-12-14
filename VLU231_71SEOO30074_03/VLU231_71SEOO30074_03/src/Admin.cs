@@ -15,13 +15,8 @@ namespace VLU231_71SEOO30074_03.src
     public partial class Admin
     {
         public string Ma { get; set; }
-        public Nullable<int> MaTk { get; set; }
-        public string HoTen { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
-        public string QueQuan { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
-        public string DiaChi { get; set; }
+        public int Loai { get; set; }
     
-        public virtual TaiKhoan TaiKhoan { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
     }
 }

@@ -93,6 +93,13 @@
     <Compile Include="src\Admin.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\BUS\AuthBUS.cs" />
+    <Compile Include="src\BUS\DiemBUS.cs" />
+    <Compile Include="src\BUS\GiangVienBUS.cs" />
+    <Compile Include="src\BUS\KhoaBUS.cs" />
+    <Compile Include="src\BUS\LopHpBUS.cs" />
+    <Compile Include="src\BUS\MonHocBUS.cs" />
+    <Compile Include="src\BUS\SinhVienBUS.cs" />
     <Compile Include="src\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,10 +136,10 @@
     <Compile Include="src\MonHoc.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\SinhVien.cs">
+    <Compile Include="src\NguoiDung.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\TaiKhoan.cs">
+    <Compile Include="src\SinhVien.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form Đăng Nhập.resx">
@@ -180,9 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\BUS\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

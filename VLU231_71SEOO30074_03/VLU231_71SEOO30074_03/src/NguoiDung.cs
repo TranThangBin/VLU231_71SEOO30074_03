@@ -17,26 +17,24 @@ namespace VLU231_71SEOO30074_03.src
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NguoiDung()
         {
-            this.Admins = new HashSet<Admin>();
-            this.GiangViens = new HashSet<GiangVien>();
-            this.SinhViens = new HashSet<SinhVien>();
+            this.SinhvienHps = new HashSet<SinhvienHp>();
+            this.LopHps = new HashSet<LopHp>();
         }
     
         public string Ma { get; set; }
-        public int Loai { get; set; }
-        public string TenTk { get; set; }
-        public string MatKhau { get; set; }
+        public string MaKhoa { get; set; }
+        public byte Loai { get; set; }
         public string HoTen { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public System.DateTime NgaySinh { get; set; }
+        public bool GioiTinh { get; set; }
         public string QueQuan { get; set; }
-        public Nullable<bool> GioiTinh { get; set; }
         public string DiaChi { get; set; }
     
+        public virtual Khoa Khoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admin> Admins { get; set; }
+        public virtual ICollection<SinhvienHp> SinhvienHps { get; set; }
+        public virtual TaiKhoan TaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiangVien> GiangViens { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SinhVien> SinhViens { get; set; }
+        public virtual ICollection<LopHp> LopHps { get; set; }
     }
 }

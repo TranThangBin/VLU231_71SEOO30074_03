@@ -17,21 +17,36 @@ namespace VLU231_71SEOO30074_03.src.BUS
             return user != null;
         }
 
-        public static async Task<bool> Login(string username, string password)
+        public static bool Login(string username, string password)
         {
             using (var db = new QLDKHPEntities())
             {
-                bool isAuthorized = await db.NguoiDungs.AnyAsync(
+                TaiKhoan taiKhoan = db.TaiKhoans.FirstOrDefault(
                     nguoiDung => nguoiDung.TenTk == username && nguoiDung.MatKhau == password
                 );
-                if (!isAuthorized)
+                if (taiKhoan == null)
                 {
-                    user = null;
                     return false;
                 }
-                user = db.NguoiDungs.First(
-                    nguoiDung => nguoiDung.TenTk == username && nguoiDung.MatKhau == password
-                );
+                switch (taiKhoan.NguoiDung.Loai)
+                {
+                    case GiangVienBUS.MaLoai:
+                        user = db.NguoiDungs
+                            .Include(giangVien => giangVien.Khoa)
+                            .Include(giangVien => giangVien.LopHps)
+                            .First(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
+                        break;
+                    case SinhVienBUS.MaLoai:
+                        user = db.NguoiDungs
+                            .Include(sinhVien => sinhVien.Khoa)
+                            .Include(sinhVien => sinhVien.LopHps)
+                            .Include(sinhVien => sinhVien.SinhvienHps)
+                            .First(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
+                        break;
+                    default:
+                        user = db.NguoiDungs.Find(taiKhoan.MaNgD);
+                        break;
+                }
             }
             return true;
         }

@@ -17,9 +17,8 @@ namespace VLU231_71SEOO30074_03.src
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Khoa()
         {
-            this.GiangViens = new HashSet<GiangVien>();
             this.MonHocs = new HashSet<MonHoc>();
-            this.SinhViens = new HashSet<SinhVien>();
+            this.NguoiDungs = new HashSet<NguoiDung>();
         }
     
         public string Ma { get; set; }
@@ -28,10 +27,8 @@ namespace VLU231_71SEOO30074_03.src
         public string DiadiemVp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiangVien> GiangViens { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonHoc> MonHocs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SinhVien> SinhViens { get; set; }
+        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }
 }

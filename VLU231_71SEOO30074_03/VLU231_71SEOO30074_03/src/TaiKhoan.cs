@@ -12,14 +12,12 @@ namespace VLU231_71SEOO30074_03.src
     using System;
     using System.Collections.Generic;
     
-    public partial class Diem
+    public partial class TaiKhoan
     {
-        public string MaSinhVien { get; set; }
-        public string MaHp { get; set; }
-        public Nullable<decimal> DiemTrongLop { get; set; }
-        public Nullable<decimal> DiemGiuaKy { get; set; }
-        public Nullable<decimal> DiemCuoiKy { get; set; }
+        public string MaNgD { get; set; }
+        public string TenTk { get; set; }
+        public string MatKhau { get; set; }
     
-        public virtual SinhvienHp SinhvienHp { get; set; }
+        public virtual NguoiDung NguoiDung { get; set; }
     }
 }

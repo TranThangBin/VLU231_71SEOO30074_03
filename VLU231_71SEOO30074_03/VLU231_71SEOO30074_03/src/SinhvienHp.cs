@@ -12,11 +12,13 @@ namespace VLU231_71SEOO30074_03.src
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin
+    public partial class SinhvienHp
     {
-        public string Ma { get; set; }
-        public int Loai { get; set; }
+        public string MaSinhVien { get; set; }
+        public string MaHp { get; set; }
     
+        public virtual Diem Diem { get; set; }
+        public virtual LopHp LopHp { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
     }
 }

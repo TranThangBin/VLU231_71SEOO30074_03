@@ -17,20 +17,17 @@ namespace VLU231_71SEOO30074_03.src
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LopHp()
         {
-            this.Diems = new HashSet<Diem>();
-            this.GiangViens = new HashSet<GiangVien>();
-            this.SinhViens = new HashSet<SinhVien>();
+            this.SinhvienHps = new HashSet<SinhvienHp>();
+            this.NguoiDungs = new HashSet<NguoiDung>();
         }
     
         public string Ma { get; set; }
         public string MaMonHoc { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Diem> Diems { get; set; }
         public virtual MonHoc MonHoc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiangVien> GiangViens { get; set; }
+        public virtual ICollection<SinhvienHp> SinhvienHps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SinhVien> SinhViens { get; set; }
+        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }
 }

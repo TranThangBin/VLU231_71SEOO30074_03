@@ -12,10 +12,10 @@ namespace VLU231_71SEOO30074_03.src.GUI
             InitializeComponent();
         }
 
-        private async void btnLogin_Click(object sender, System.EventArgs e)
+        private void btnLogin_Click(object sender, System.EventArgs e)
         {
             ptbLoader.Visible = true;
-            bool isAuthorized = await AuthBUS.Login(txtUsername.Text, txtPassword.Text);
+            bool isAuthorized = AuthBUS.Login(txtUsername.Text, txtPassword.Text);
             if (!isAuthorized)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!");

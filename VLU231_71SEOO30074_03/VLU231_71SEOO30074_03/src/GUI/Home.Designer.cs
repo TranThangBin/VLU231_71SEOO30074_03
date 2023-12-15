@@ -49,14 +49,14 @@
             this.navMenu = new System.Windows.Forms.MenuStrip();
             this.homeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dkhpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tchpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dkldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlmhMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qllhpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlgvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlsvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dkldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tchpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.pnlKhoa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -279,13 +279,13 @@
             this.navMenu.Location = new System.Drawing.Point(0, 91);
             this.navMenu.Name = "navMenu";
             this.navMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.navMenu.Size = new System.Drawing.Size(125, 396);
+            this.navMenu.Size = new System.Drawing.Size(78, 396);
             this.navMenu.TabIndex = 0;
             // 
             // homeMenuItem
             // 
             this.homeMenuItem.Name = "homeMenuItem";
-            this.homeMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.homeMenuItem.Size = new System.Drawing.Size(69, 19);
             this.homeMenuItem.Text = "Trang chủ";
             // 
             // dkhpMenuItem
@@ -294,6 +294,20 @@
             this.dkhpMenuItem.Size = new System.Drawing.Size(116, 19);
             this.dkhpMenuItem.Text = "Đăng Ký Học Phần";
             this.dkhpMenuItem.Visible = false;
+            // 
+            // tchpMenuItem
+            // 
+            this.tchpMenuItem.Name = "tchpMenuItem";
+            this.tchpMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.tchpMenuItem.Text = "Tra Cứu Học Phần ";
+            this.tchpMenuItem.Visible = false;
+            // 
+            // dkldMenuItem
+            // 
+            this.dkldMenuItem.Name = "dkldMenuItem";
+            this.dkldMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.dkldMenuItem.Text = "Đăng Ký Lịch Dạy";
+            this.dkldMenuItem.Visible = false;
             // 
             // qlmhMenuItem
             // 
@@ -319,38 +333,24 @@
             // qlsvMenuItem
             // 
             this.qlsvMenuItem.Name = "qlsvMenuItem";
-            this.qlsvMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.qlsvMenuItem.Size = new System.Drawing.Size(109, 19);
             this.qlsvMenuItem.Text = "Quản Lý Sinh Viên";
             this.qlsvMenuItem.Visible = false;
             // 
             // qldMenuItem
             // 
             this.qldMenuItem.Name = "qldMenuItem";
-            this.qldMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.qldMenuItem.Size = new System.Drawing.Size(86, 19);
             this.qldMenuItem.Text = "Quản lý Điểm";
             this.qldMenuItem.Visible = false;
-            // 
-            // dkldMenuItem
-            // 
-            this.dkldMenuItem.Name = "dkldMenuItem";
-            this.dkldMenuItem.Size = new System.Drawing.Size(116, 19);
-            this.dkldMenuItem.Text = "Đăng Ký Lịch Dạy";
-            this.dkldMenuItem.Visible = false;
             // 
             // logoutMenuItem
             // 
             this.logoutMenuItem.ForeColor = System.Drawing.Color.Red;
             this.logoutMenuItem.Name = "logoutMenuItem";
-            this.logoutMenuItem.Size = new System.Drawing.Size(116, 19);
+            this.logoutMenuItem.Size = new System.Drawing.Size(69, 19);
             this.logoutMenuItem.Text = "Đăng Xuất";
             this.logoutMenuItem.Click += new System.EventHandler(this.logoutMenuItem_Click);
-            // 
-            // tchpMenuItem
-            // 
-            this.tchpMenuItem.Name = "tchpMenuItem";
-            this.tchpMenuItem.Size = new System.Drawing.Size(116, 19);
-            this.tchpMenuItem.Text = "Tra Cứu Học Phần ";
-            this.tchpMenuItem.Visible = false;
             // 
             // Home
             // 
@@ -365,7 +365,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Home";
             this.Text = "Home";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

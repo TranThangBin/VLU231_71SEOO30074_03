@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using VLU231_71SEOO30074_03.src.BUS;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace VLU231_71SEOO30074_03.src.GUI
 {
@@ -22,9 +23,24 @@ namespace VLU231_71SEOO30074_03.src.GUI
             else
             {
                 Hide();
-                (new Home(this)).Show();
+                Home homeForm = new Home();
+                homeForm.FormClosing += HomeForm_FormClosing;
+                homeForm.Show();
             }
             ptbLoader.Visible = false;
+        }
+
+        private void HomeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool confirm =
+                MessageBox.Show("Bạn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNoCancel)
+                == DialogResult.Yes;
+            if (!AuthBUS.Logout() || !confirm)
+            {
+                e.Cancel = true;
+                return;
+            }
+            Show();
         }
     }
 }

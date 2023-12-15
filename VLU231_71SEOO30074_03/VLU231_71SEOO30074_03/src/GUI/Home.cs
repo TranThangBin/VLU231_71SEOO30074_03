@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using VLU231_71SEOO30074_03.src.BUS;
 
@@ -7,12 +6,9 @@ namespace VLU231_71SEOO30074_03.src.GUI
 {
     public partial class Home : Form
     {
-        private Login parent;
-
-        public Home(Login parent)
+        public Home()
         {
             InitializeComponent();
-            this.parent = parent;
         }
 
         private void Home_Load(object sender, System.EventArgs e)
@@ -71,19 +67,6 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     Close();
                     return;
             }
-        }
-
-        private void Home_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            bool confirm =
-                MessageBox.Show("Bạn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNoCancel)
-                == DialogResult.Yes;
-            if (!AuthBUS.Logout() || !confirm)
-            {
-                e.Cancel = true;
-                return;
-            }
-            parent.Show();
         }
 
         private void logoutMenuItem_Click(object sender, System.EventArgs e)

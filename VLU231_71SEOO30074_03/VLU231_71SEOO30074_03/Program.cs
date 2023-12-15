@@ -14,7 +14,7 @@ namespace VLU231_71SEOO30074_03
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Index());
+            Application.Run(new Login());
         }
     }
 }

@@ -121,13 +121,19 @@
   <data name="Ảnh chụp màn hình 2023-12-12 232316" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ảnh chụp màn hình 2023-12-12 232316.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dfd2683c9701642c776e31d3b0d603a9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dfd2683c9701642c776e31d3b0d603a9.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="172626_user_male_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\172626_user_male_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="banner-yersin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner-yersin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="134226_back_arrow_left_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\134226_back_arrow_left_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="172626_user_male_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\172626_user_male_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3005767_account_door_enter_login_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3005767_account_door_enter_login_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

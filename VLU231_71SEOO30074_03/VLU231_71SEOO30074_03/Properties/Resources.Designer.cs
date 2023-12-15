@@ -83,6 +83,16 @@ namespace VLU231_71SEOO30074_03.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3005767_account_door_enter_login_icon {
+            get {
+                object obj = ResourceManager.GetObject("3005767_account_door_enter_login_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ảnh_chụp_màn_hình_2023_12_12_232316 {
             get {
                 object obj = ResourceManager.GetObject("Ảnh chụp màn hình 2023-12-12 232316", resourceCulture);
@@ -96,6 +106,16 @@ namespace VLU231_71SEOO30074_03.Properties {
         internal static System.Drawing.Bitmap banner_yersin {
             get {
                 object obj = ResourceManager.GetObject("banner-yersin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dfd2683c9701642c776e31d3b0d603a9 {
+            get {
+                object obj = ResourceManager.GetObject("dfd2683c9701642c776e31d3b0d603a9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

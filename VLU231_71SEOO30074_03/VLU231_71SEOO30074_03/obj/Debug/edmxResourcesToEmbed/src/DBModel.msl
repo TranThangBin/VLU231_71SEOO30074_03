@@ -5,12 +5,7 @@
       <EntityTypeMapping TypeName="QLDKHPModel.Admin">
         <MappingFragment StoreEntitySet="Admin">
           <ScalarProperty Name="Ma" ColumnName="Ma" />
-          <ScalarProperty Name="MaTk" ColumnName="MaTk" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -29,13 +24,8 @@
       <EntityTypeMapping TypeName="QLDKHPModel.GiangVien">
         <MappingFragment StoreEntitySet="GiangVien">
           <ScalarProperty Name="Ma" ColumnName="Ma" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
           <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
-          <ScalarProperty Name="MaTk" ColumnName="MaTk" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -68,12 +58,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SinhViens">
-      <EntityTypeMapping TypeName="QLDKHPModel.SinhVien">
-        <MappingFragment StoreEntitySet="SinhVien">
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="QLDKHPModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
           <ScalarProperty Name="Ma" ColumnName="Ma" />
-          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
-          <ScalarProperty Name="MaTk" ColumnName="MaTk" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
+          <ScalarProperty Name="TenTk" ColumnName="TenTk" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
@@ -82,12 +73,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TaiKhoans">
-      <EntityTypeMapping TypeName="QLDKHPModel.TaiKhoan">
-        <MappingFragment StoreEntitySet="TaiKhoan">
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="QLDKHPModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
           <ScalarProperty Name="Ma" ColumnName="Ma" />
-          <ScalarProperty Name="TenTk" ColumnName="TenTk" />
-          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
+          <ScalarProperty Name="MaKhoa" ColumnName="MaKhoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

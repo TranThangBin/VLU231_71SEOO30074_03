@@ -18,8 +18,8 @@ namespace VLU231_71SEOO30074_03.src.GUI
             txtTenGoi.Clear();
             txtSdt.Clear();
             txtDiaDiemVp.Clear();
-            dgvKhoa.ClearSelection();
             txtMaKhoa.Enabled = true;
+            dgvKhoa.ClearSelection();
         }
 
         private Khoa GetKhoa()

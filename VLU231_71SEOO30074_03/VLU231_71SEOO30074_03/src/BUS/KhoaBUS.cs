@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
@@ -12,8 +11,7 @@ namespace VLU231_71SEOO30074_03.src.BUS
             {
                 using (var db = new QLDKHPEntities())
                 {
-                    List<Khoa> khoas = db.Khoas.ToList();
-                    return khoas;
+                    return db.Khoas.ToList();
                 }
             }
         }

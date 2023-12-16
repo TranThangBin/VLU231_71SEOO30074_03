@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
@@ -6,112 +8,119 @@ namespace VLU231_71SEOO30074_03.src.BUS
     {
         public const byte MaLoai = 2;
 
-        private Control maSvCtrl;
-        private Control maKhoaCtrl;
-        private Control hoTenCtrl;
-        private Control gioiTinhCtrl;
-        private Control queQuanCtrl;
-        private Control diaChiCtrl;
-
-        private string maSv
+        public static List<NguoiDung> SinhViens
         {
-            get => maSvCtrl.Text.Trim();
-        }
-        private string maKhoa
-        {
-            get => maKhoaCtrl.Text.Trim();
-        }
-        private string hoTen
-        {
-            get => hoTenCtrl.Text.Trim();
-        }
-        private string gioiTinh
-        {
-            get => gioiTinhCtrl.Text.Trim();
-        }
-        private string queQuan
-        {
-            get => queQuanCtrl.Text.Trim();
-        }
-        private string diaChi
-        {
-            get => diaChiCtrl.Text.Trim();
-        }
-
-        public SinhVienBUS(
-            Control maSvCtrl,
-            Control maKhoaCtrl,
-            Control hoTenCtrl,
-            Control gioiTinhCtrl,
-            Control queQuanCtrl,
-            Control diaChiCtrl
-        )
-        {
-            this.maSvCtrl = maSvCtrl;
-            this.maKhoaCtrl = maKhoaCtrl;
-            this.hoTenCtrl = hoTenCtrl;
-            this.gioiTinhCtrl = gioiTinhCtrl;
-            this.queQuanCtrl = queQuanCtrl;
-            this.diaChiCtrl = diaChiCtrl;
-        }
-
-        public void InsertSinhVien()
-        {
-            string gioiTinh = this.gioiTinh;
-            if (gioiTinh != "Nam" && gioiTinh != "Nữ")
+            get
             {
-                return;
-            }
-            using (var db = new QLDKHPEntities())
-            {
-                db.NguoiDungs.Add(
-                    new NguoiDung()
-                    {
-                        Ma = maSv,
-                        MaKhoa = maKhoa,
-                        HoTen = hoTen,
-                        GioiTinh = gioiTinh == "Nam",
-                        QueQuan = queQuan,
-                        DiaChi = diaChi,
-                        Loai = MaLoai,
-                    }
-                );
-                db.SaveChanges();
-            }
-        }
-
-        public void UpdateSinhVien()
-        {
-            string gioiTinh = this.gioiTinh;
-            if (gioiTinh != "Nam" && gioiTinh != "Nữ")
-            {
-                return;
-            }
-            using (var db = new QLDKHPEntities())
-            {
-                NguoiDung sinhVien = db.NguoiDungs.Find(maSvCtrl.Text);
-                if (sinhVien == null)
+                using (var db = new QLDKHPEntities())
                 {
-                    return;
+                    return db.NguoiDungs
+                        .Include(sinhVien => sinhVien.Khoa)
+                        .Include(sinhVien => sinhVien.TaiKhoan)
+                        .Where(nguoiDung => nguoiDung.Loai == MaLoai)
+                        .ToList();
                 }
-                sinhVien.HoTen = hoTen;
-                sinhVien.GioiTinh = gioiTinh == "Nam";
-                sinhVien.QueQuan = queQuan;
-                sinhVien.DiaChi = diaChi;
+            }
+        }
+
+        public static void InsertSinhVien(NguoiDung sinhVien)
+        {
+            if (sinhVien.Loai != MaLoai)
+            {
+                return;
+            }
+            using (var db = new QLDKHPEntities())
+            {
+                db.NguoiDungs.Add(sinhVien);
                 db.SaveChanges();
             }
         }
 
-        public void DeleteSinhVien()
+        public static void UpdateSinhVien(string maSv, NguoiDung sinhVienMoi)
         {
             using (var db = new QLDKHPEntities())
             {
                 NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
-                if (sinhVien == null)
+                if (sinhVien == null || sinhVien.Loai != MaLoai)
+                {
+                    return;
+                }
+                sinhVien.HoTen = sinhVienMoi.HoTen;
+                sinhVien.MaKhoa = sinhVienMoi.MaKhoa;
+                sinhVien.NgaySinh = sinhVienMoi.NgaySinh;
+                sinhVien.GioiTinh = sinhVienMoi.GioiTinh;
+                sinhVien.QueQuan = sinhVienMoi.QueQuan;
+                sinhVien.DiaChi = sinhVienMoi.DiaChi;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteSinhVien(string maSv)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
+                if (sinhVien == null || sinhVien.Loai != MaLoai)
                 {
                     return;
                 }
                 db.NguoiDungs.Remove(sinhVien);
+                db.SaveChanges();
+            }
+        }
+
+        public static TaiKhoan GetTaiKhoanSinhVien(string maSv)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                TaiKhoan tkSinhVien = db.TaiKhoans.Find(maSv);
+                if (tkSinhVien?.NguoiDung?.Loai != MaLoai)
+                {
+                    return null;
+                }
+                return tkSinhVien;
+            }
+        }
+
+        public static void InsertTaiKhoanSinhVien(string maSv, TaiKhoan taiKhoan)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
+                if (sinhVien == null || sinhVien.Loai != MaLoai)
+                {
+                    return;
+                }
+                sinhVien.TaiKhoan = taiKhoan;
+                db.SaveChanges();
+            }
+        }
+
+        public static void UpdateTaiKhoanSinhVien(string maSv, TaiKhoan taiKhoanMoi)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
+                if (sinhVien == null || sinhVien.Loai != MaLoai)
+                {
+                    return;
+                }
+                sinhVien.TaiKhoan.TenTk = taiKhoanMoi.TenTk;
+                sinhVien.TaiKhoan.MatKhau = taiKhoanMoi.MatKhau;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteTaiKhoanSinhVien(string maSv)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
+                if (sinhVien == null || sinhVien.Loai != MaLoai)
+                {
+                    return;
+                }
+                db.TaiKhoans.Remove(sinhVien.TaiKhoan);
                 db.SaveChanges();
             }
         }

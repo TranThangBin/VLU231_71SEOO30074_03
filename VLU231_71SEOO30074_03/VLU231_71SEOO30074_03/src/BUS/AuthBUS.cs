@@ -17,11 +17,11 @@ namespace VLU231_71SEOO30074_03.src.BUS
             return user != null;
         }
 
-        public static bool Login(string username, string password)
+        public static async Task<bool> Login(string username, string password)
         {
             using (var db = new QLDKHPEntities())
             {
-                TaiKhoan taiKhoan = db.TaiKhoans.FirstOrDefault(
+                TaiKhoan taiKhoan = await db.TaiKhoans.FirstOrDefaultAsync(
                     nguoiDung => nguoiDung.TenTk == username && nguoiDung.MatKhau == password
                 );
                 if (taiKhoan == null)
@@ -31,20 +31,20 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 switch (taiKhoan.NguoiDung.Loai)
                 {
                     case GiangVienBUS.MaLoai:
-                        user = db.NguoiDungs
+                        user = await db.NguoiDungs
                             .Include(giangVien => giangVien.Khoa)
                             .Include(giangVien => giangVien.LopHps)
-                            .First(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
+                            .FirstAsync(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
                         break;
                     case SinhVienBUS.MaLoai:
-                        user = db.NguoiDungs
+                        user = await db.NguoiDungs
                             .Include(sinhVien => sinhVien.Khoa)
                             .Include(sinhVien => sinhVien.LopHps)
                             .Include(sinhVien => sinhVien.SinhvienHps)
-                            .First(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
+                            .FirstAsync(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
                         break;
                     default:
-                        user = db.NguoiDungs.Find(taiKhoan.MaNgD);
+                        user = await db.NguoiDungs.FindAsync(taiKhoan.MaNgD);
                         break;
                 }
             }

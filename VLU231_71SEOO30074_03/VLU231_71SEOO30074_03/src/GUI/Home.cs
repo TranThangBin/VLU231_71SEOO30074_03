@@ -36,13 +36,17 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     lblUser.Text = "Thông tin giảng viên";
                     lblMa.Text = "MSGV:";
                     txtKhoa.Text = AuthBUS.User.Khoa.Ten;
-                    pnlKhoa.Visible = dkhpMenuItem.Visible = tchpMenuItem.Visible = true;
+                    pnlKhoa.Visible =
+                        dkldMenuItem.Visible =
+                        tchpMenuItem.Visible =
+                        tchpMenuItem.Visible =
+                            true;
                     break;
                 case 2:
                     lblUser.Text = "Thông tin sinh viên";
                     lblMa.Text = "MSSV:";
                     txtKhoa.Text = AuthBUS.User.Khoa.Ten;
-                    pnlKhoa.Visible = dkldMenuItem.Visible = true;
+                    pnlKhoa.Visible = dkhpMenuItem.Visible = tchpMenuItem.Visible = true;
                     break;
                 default:
                     lblUser.Text = "Thông tin quản trị viên";
@@ -58,14 +62,6 @@ namespace VLU231_71SEOO30074_03.src.GUI
             }
         }
 
-        private void qlKhoaMenuItem_Click(object sender, EventArgs e)
-        {
-            FacultyManager facultyManager = new FacultyManager();
-            facultyManager.FormClosing += childForm_FormClosing;
-            Hide();
-            facultyManager.Show();
-        }
-
         private void logoutMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -74,6 +70,22 @@ namespace VLU231_71SEOO30074_03.src.GUI
         private void childForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Show();
+        }
+
+        private void qlKhoaMenuItem_Click(object sender, EventArgs e)
+        {
+            FacultyManager facultyManager = new FacultyManager();
+            facultyManager.FormClosing += childForm_FormClosing;
+            Hide();
+            facultyManager.Show();
+        }
+
+        private void qlsvMenuItem_Click(object sender, EventArgs e)
+        {
+            StudenManager studenManager = new StudenManager();
+            studenManager.FormClosing += childForm_FormClosing;
+            Hide();
+            studenManager.Show();
         }
     }
 }

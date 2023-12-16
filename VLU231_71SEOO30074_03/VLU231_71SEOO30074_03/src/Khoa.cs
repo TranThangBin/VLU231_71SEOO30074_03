@@ -30,5 +30,10 @@ namespace VLU231_71SEOO30074_03.src
         public virtual ICollection<MonHoc> MonHocs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
+
+        public override string ToString()
+        {
+            return this.Ten;
+        }
     }
 }

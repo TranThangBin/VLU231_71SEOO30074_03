@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,16 +37,16 @@
             this.txtTenGoi = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtDiaDiemVp = new System.Windows.Forms.TextBox();
-            this.dgvKhoa = new System.Windows.Forms.DataGridView();
-            this.maKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenGoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaDiemVp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnTroVe = new System.Windows.Forms.Button();
             this.btnHuyChon = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.dgvKhoa = new System.Windows.Forms.DataGridView();
+            this.maKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenGoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaDiemVp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,56 +114,6 @@
             this.txtDiaDiemVp.Size = new System.Drawing.Size(288, 20);
             this.txtDiaDiemVp.TabIndex = 7;
             // 
-            // dgvKhoa
-            // 
-            this.dgvKhoa.AllowUserToAddRows = false;
-            this.dgvKhoa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKhoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maKhoa,
-            this.tenGoi,
-            this.sdt,
-            this.diaDiemVp});
-            this.dgvKhoa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvKhoa.Location = new System.Drawing.Point(0, 173);
-            this.dgvKhoa.Name = "dgvKhoa";
-            this.dgvKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhoa.Size = new System.Drawing.Size(800, 277);
-            this.dgvKhoa.TabIndex = 8;
-            this.dgvKhoa.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoa_CellEnter);
-            // 
-            // maKhoa
-            // 
-            this.maKhoa.HeaderText = "Mã khoa";
-            this.maKhoa.Name = "maKhoa";
-            this.maKhoa.Width = 150;
-            // 
-            // tenGoi
-            // 
-            this.tenGoi.HeaderText = "Tên gọi";
-            this.tenGoi.Name = "tenGoi";
-            this.tenGoi.Width = 150;
-            // 
-            // sdt
-            // 
-            this.sdt.HeaderText = "Số điện thoại";
-            this.sdt.Name = "sdt";
-            this.sdt.Width = 150;
-            // 
-            // diaDiemVp
-            // 
-            this.diaDiemVp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.diaDiemVp.HeaderText = "Địa điểm văn phòng";
-            this.diaDiemVp.Name = "diaDiemVp";
-            // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(133, 125);
@@ -214,6 +164,56 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // dgvKhoa
+            // 
+            this.dgvKhoa.AllowUserToAddRows = false;
+            this.dgvKhoa.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maKhoa,
+            this.tenGoi,
+            this.Sdt,
+            this.diaDiemVp});
+            this.dgvKhoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvKhoa.Location = new System.Drawing.Point(0, 173);
+            this.dgvKhoa.Name = "dgvKhoa";
+            this.dgvKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKhoa.Size = new System.Drawing.Size(800, 277);
+            this.dgvKhoa.TabIndex = 8;
+            this.dgvKhoa.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoa_CellEnter);
+            // 
+            // maKhoa
+            // 
+            this.maKhoa.HeaderText = "Mã khoa";
+            this.maKhoa.Name = "maKhoa";
+            this.maKhoa.Width = 150;
+            // 
+            // tenGoi
+            // 
+            this.tenGoi.HeaderText = "Tên gọi";
+            this.tenGoi.Name = "tenGoi";
+            this.tenGoi.Width = 150;
+            // 
+            // Sdt
+            // 
+            this.Sdt.HeaderText = "Số điện thoại";
+            this.Sdt.Name = "Sdt";
+            this.Sdt.Width = 150;
+            // 
+            // diaDiemVp
+            // 
+            this.diaDiemVp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.diaDiemVp.HeaderText = "Địa điểm văn phòng";
+            this.diaDiemVp.Name = "diaDiemVp";
+            // 
             // FacultyManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,19 +252,19 @@
         private System.Windows.Forms.TextBox txtTenGoi;
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtDiaDiemVp;
-        private System.Windows.Forms.DataGridView dgvKhoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn maDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdtDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diadiemVpDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnTroVe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maKhoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenGoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diaDiemVp;
         private System.Windows.Forms.Button btnHuyChon;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.DataGridView dgvKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenGoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaDiemVp;
     }
 }

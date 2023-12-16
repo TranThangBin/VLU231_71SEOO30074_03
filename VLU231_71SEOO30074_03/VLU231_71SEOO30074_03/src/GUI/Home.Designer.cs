@@ -82,8 +82,8 @@
             this.navMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.navMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dkhpMenuItem,
-            this.tchpMenuItem,
             this.dkldMenuItem,
+            this.tchpMenuItem,
             this.qlKhoaMenuItem,
             this.qlgvMenuItem,
             this.qlsvMenuItem,
@@ -123,6 +123,7 @@
             this.qlKhoaMenuItem.Name = "qlKhoaMenuItem";
             this.qlKhoaMenuItem.Size = new System.Drawing.Size(116, 19);
             this.qlKhoaMenuItem.Text = "Quản Lý Khoa";
+            this.qlKhoaMenuItem.Visible = false;
             this.qlKhoaMenuItem.Click += new System.EventHandler(this.qlKhoaMenuItem_Click);
             // 
             // qlgvMenuItem
@@ -138,6 +139,7 @@
             this.qlsvMenuItem.Size = new System.Drawing.Size(116, 19);
             this.qlsvMenuItem.Text = "Quản Lý Sinh Viên";
             this.qlsvMenuItem.Visible = false;
+            this.qlsvMenuItem.Click += new System.EventHandler(this.qlsvMenuItem_Click);
             // 
             // qlmhMenuItem
             // 

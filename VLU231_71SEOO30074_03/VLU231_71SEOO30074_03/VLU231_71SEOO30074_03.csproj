@@ -105,11 +105,11 @@
     <Compile Include="src\GUI\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\student management.cs">
+    <Compile Include="src\GUI\StudentManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\student management.Designer.cs">
-      <DependentUpon>student management.cs</DependentUpon>
+    <Compile Include="src\GUI\StudentManager.Designer.cs">
+      <DependentUpon>StudentManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\subject management.cs">
       <SubType>Form</SubType>
@@ -198,8 +198,8 @@
     <EmbeddedResource Include="src\GUI\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\student management.resx">
-      <DependentUpon>student management.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\StudentManager.resx">
+      <DependentUpon>StudentManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\subject management.resx">
       <DependentUpon>subject management.cs</DependentUpon>

@@ -20,7 +20,6 @@ namespace VLU231_71SEOO30074_03.src
         public Nullable<decimal> DiemGiuaKy { get; set; }
         public Nullable<decimal> DiemCuoiKy { get; set; }
     
-        public virtual LopHp LopHp { get; set; }
-        public virtual SinhVien SinhVien { get; set; }
+        public virtual SinhvienHp SinhvienHp { get; set; }
     }
 }

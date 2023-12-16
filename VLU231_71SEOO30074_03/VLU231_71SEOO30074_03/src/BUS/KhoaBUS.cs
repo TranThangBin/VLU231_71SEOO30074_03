@@ -1,26 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+using System.Windows.Forms;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
     internal class KhoaBUS
     {
+        public static List<Khoa> Khoas
+        {
+            get
+            {
+                using (var db = new QLDKHPEntities())
+                {
+                    List<Khoa> khoas = db.Khoas.ToList();
+                    return khoas;
+                }
+            }
+        }
+
         public static void InsertKhoa(Khoa khoa)
         {
-            Khoa k = new Khoa() { };
-            using (var db =new QLDKHPEntities())
+            using (var db = new QLDKHPEntities())
             {
-                db.Khoas.Add(k);
+                db.Khoas.Add(khoa);
                 db.SaveChanges();
             }
         }
-        public static void UpdateKhoa(string maKhoa,Khoa khoaMoi)
+
+        public static void UpdateKhoa(string maKhoa, Khoa khoaMoi)
         {
-            using( var db = new QLDKHPEntities())
+            using (var db = new QLDKHPEntities())
             {
                 Khoa k = db.Khoas.Find(maKhoa);
                 if (k == null)
@@ -33,13 +42,16 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 db.SaveChanges();
             }
         }
-        public static void DeleteKhoa( string maKhoa)
+
+        public static void DeleteKhoa(string maKhoa)
         {
-           using( var db = new QLDKHPEntities())
+            using (var db = new QLDKHPEntities())
             {
                 Khoa k = db.Khoas.Find(maKhoa);
-                if(k == null)
-                { return; }
+                if (k == null)
+                {
+                    return;
+                }
                 db.Khoas.Remove(k);
                 db.SaveChanges();
             }

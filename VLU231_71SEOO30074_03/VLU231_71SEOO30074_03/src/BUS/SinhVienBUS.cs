@@ -1,48 +1,117 @@
-﻿namespace VLU231_71SEOO30074_03.src.BUS
+﻿using System.Windows.Forms;
+
+namespace VLU231_71SEOO30074_03.src.BUS
 {
     internal class SinhVienBUS
     {
-        public static void InsertSinhVien(NguoiDung sinhVien, string maKhoa)
+        public const byte MaLoai = 2;
+
+        private Control maSvCtrl;
+        private Control maKhoaCtrl;
+        private Control hoTenCtrl;
+        private Control gioiTinhCtrl;
+        private Control queQuanCtrl;
+        private Control diaChiCtrl;
+
+        private string maSv
         {
-            SinhVien sv = new SinhVien() { MaKhoa = maKhoa, NguoiDung = sinhVien, };
+            get => maSvCtrl.Text.Trim();
+        }
+        private string maKhoa
+        {
+            get => maKhoaCtrl.Text.Trim();
+        }
+        private string hoTen
+        {
+            get => hoTenCtrl.Text.Trim();
+        }
+        private string gioiTinh
+        {
+            get => gioiTinhCtrl.Text.Trim();
+        }
+        private string queQuan
+        {
+            get => queQuanCtrl.Text.Trim();
+        }
+        private string diaChi
+        {
+            get => diaChiCtrl.Text.Trim();
+        }
+
+        public SinhVienBUS(
+            Control maSvCtrl,
+            Control maKhoaCtrl,
+            Control hoTenCtrl,
+            Control gioiTinhCtrl,
+            Control queQuanCtrl,
+            Control diaChiCtrl
+        )
+        {
+            this.maSvCtrl = maSvCtrl;
+            this.maKhoaCtrl = maKhoaCtrl;
+            this.hoTenCtrl = hoTenCtrl;
+            this.gioiTinhCtrl = gioiTinhCtrl;
+            this.queQuanCtrl = queQuanCtrl;
+            this.diaChiCtrl = diaChiCtrl;
+        }
+
+        public void InsertSinhVien()
+        {
+            string gioiTinh = this.gioiTinh;
+            if (gioiTinh != "Nam" && gioiTinh != "Nữ")
+            {
+                return;
+            }
             using (var db = new QLDKHPEntities())
             {
-                db.SinhViens.Add(sv);
+                db.NguoiDungs.Add(
+                    new NguoiDung()
+                    {
+                        Ma = maSv,
+                        MaKhoa = maKhoa,
+                        HoTen = hoTen,
+                        GioiTinh = gioiTinh == "Nam",
+                        QueQuan = queQuan,
+                        DiaChi = diaChi,
+                        Loai = MaLoai,
+                    }
+                );
                 db.SaveChanges();
             }
         }
 
-        public static void UpdateSinhVien(string maSinhVien, NguoiDung sinhVienMoi)
+        public void UpdateSinhVien()
         {
+            string gioiTinh = this.gioiTinh;
+            if (gioiTinh != "Nam" && gioiTinh != "Nữ")
+            {
+                return;
+            }
             using (var db = new QLDKHPEntities())
             {
-                SinhVien sv = db.SinhViens.Find(maSinhVien);
-                if (sv == null)
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSvCtrl.Text);
+                if (sinhVien == null)
                 {
                     return;
                 }
-                NguoiDung sinhVien = sv.NguoiDung;
-                sinhVien.TenTk = sinhVienMoi.TenTk;
-                sinhVien.MatKhau = sinhVienMoi.MatKhau;
-                sinhVien.HoTen = sinhVienMoi.HoTen;
-                sinhVien.NgaySinh = sinhVienMoi.NgaySinh;
-                sinhVien.QueQuan = sinhVienMoi.QueQuan;
-                sinhVien.GioiTinh = sinhVienMoi.GioiTinh;
-                sinhVien.DiaChi = sinhVienMoi.DiaChi;
+                sinhVien.HoTen = hoTen;
+                sinhVien.GioiTinh = gioiTinh == "Nam";
+                sinhVien.QueQuan = queQuan;
+                sinhVien.DiaChi = diaChi;
                 db.SaveChanges();
             }
         }
 
-        public static void DeleteSinhVien(string maSinhVien)
+        public void DeleteSinhVien()
         {
             using (var db = new QLDKHPEntities())
             {
-                SinhVien sv = db.SinhViens.Find(maSinhVien);
-                if (sv == null)
+                NguoiDung sinhVien = db.NguoiDungs.Find(maSv);
+                if (sinhVien == null)
                 {
                     return;
                 }
-                db.NguoiDungs.Remove(sv.NguoiDung);
+                db.NguoiDungs.Remove(sinhVien);
                 db.SaveChanges();
             }
         }

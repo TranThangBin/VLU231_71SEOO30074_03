@@ -63,6 +63,72 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="src\Diem.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Class manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Class manager.Designer.cs">
+      <DependentUpon>Class manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\FacultyManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\FacultyManager.Designer.cs">
+      <DependentUpon>FacultyManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\point management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\point management.Designer.cs">
+      <DependentUpon>point management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\student management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\student management.Designer.cs">
+      <DependentUpon>student management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\subject management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\subject management.Designer.cs">
+      <DependentUpon>subject management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\teacher management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\teacher management.Designer.cs">
+      <DependentUpon>teacher management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Teaching schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Teaching schedule.Designer.cs">
+      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,9 +161,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\Admin.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="src\BUS\AuthBUS.cs" />
     <Compile Include="src\BUS\DiemBUS.cs" />
     <Compile Include="src\BUS\GiangVienBUS.cs" />
@@ -105,27 +168,6 @@
     <Compile Include="src\BUS\LopHpBUS.cs" />
     <Compile Include="src\BUS\MonHocBUS.cs" />
     <Compile Include="src\BUS\SinhVienBUS.cs" />
-    <Compile Include="src\DBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\DBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\DBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="src\Diem.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="src\GiangVien.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="src\Khoa.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -138,9 +180,36 @@
     <Compile Include="src\NguoiDung.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\SinhVien.cs">
+    <Compile Include="src\SinhvienHp.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\TaiKhoan.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\GUI\Class manager.resx">
+      <DependentUpon>Class manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\FacultyManager.resx">
+      <DependentUpon>FacultyManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\point management.resx">
+      <DependentUpon>point management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\student management.resx">
+      <DependentUpon>student management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\subject management.resx">
+      <DependentUpon>subject management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\teacher management.resx">
+      <DependentUpon>teacher management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\Teaching schedule.resx">
+      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +260,8 @@
     <None Include="Resources\134226_back_arrow_left_icon.png" />
     <None Include="Resources\172626_user_male_icon.png" />
     <None Include="Resources\dfd2683c9701642c776e31d3b0d603a9.gif" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="src\DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>

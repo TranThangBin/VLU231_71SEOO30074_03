@@ -25,7 +25,7 @@ namespace VLU231_71SEOO30074_03.src
         public string MaKhoa { get; set; }
         public string MaTienQuyet { get; set; }
         public string Ten { get; set; }
-        public Nullable<byte> SoTc { get; set; }
+        public byte SoTc { get; set; }
     
         public virtual Khoa Khoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

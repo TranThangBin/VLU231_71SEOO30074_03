@@ -25,13 +25,12 @@ namespace VLU231_71SEOO30074_03.src
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Diem> Diems { get; set; }
-        public virtual DbSet<GiangVien> GiangViens { get; set; }
         public virtual DbSet<Khoa> Khoas { get; set; }
         public virtual DbSet<LopHp> LopHps { get; set; }
         public virtual DbSet<MonHoc> MonHocs { get; set; }
         public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
-        public virtual DbSet<SinhVien> SinhViens { get; set; }
+        public virtual DbSet<SinhvienHp> SinhvienHps { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
     }
 }

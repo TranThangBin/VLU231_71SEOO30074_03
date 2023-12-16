@@ -81,6 +81,54 @@
     <Compile Include="src\Diem.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\GUI\Class manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Class manager.Designer.cs">
+      <DependentUpon>Class manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\FacultyManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\FacultyManager.Designer.cs">
+      <DependentUpon>FacultyManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\point management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\point management.Designer.cs">
+      <DependentUpon>point management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\student management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\student management.Designer.cs">
+      <DependentUpon>student management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\subject management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\subject management.Designer.cs">
+      <DependentUpon>subject management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\teacher management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\teacher management.Designer.cs">
+      <DependentUpon>teacher management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\GUI\Teaching schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GUI\Teaching schedule.Designer.cs">
+      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +186,30 @@
     <Compile Include="src\TaiKhoan.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\GUI\Class manager.resx">
+      <DependentUpon>Class manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\FacultyManager.resx">
+      <DependentUpon>FacultyManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\point management.resx">
+      <DependentUpon>point management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\student management.resx">
+      <DependentUpon>student management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\subject management.resx">
+      <DependentUpon>subject management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\teacher management.resx">
+      <DependentUpon>teacher management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\GUI\Teaching schedule.resx">
+      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

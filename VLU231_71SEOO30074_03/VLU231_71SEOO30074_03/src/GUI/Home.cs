@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 using VLU231_71SEOO30074_03.src.BUS;
 
@@ -11,7 +11,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
             InitializeComponent();
         }
 
-        private void Home_Load(object sender, System.EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
             if (!AuthBUS.IsAuthenticate())
             {
@@ -48,6 +48,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     lblUser.Text = "Thông tin quản trị viên";
                     lblMa.Text = "MÃ ADMIN:";
                     qlmhMenuItem.Visible =
+                        qlKhoaMenuItem.Visible =
                         qllhpMenuItem.Visible =
                         qlsvMenuItem.Visible =
                         qlgvMenuItem.Visible =
@@ -57,9 +58,22 @@ namespace VLU231_71SEOO30074_03.src.GUI
             }
         }
 
-        private void logoutMenuItem_Click(object sender, System.EventArgs e)
+        private void qlKhoaMenuItem_Click(object sender, EventArgs e)
+        {
+            FacultyManager facultyManager = new FacultyManager();
+            facultyManager.FormClosing += childForm_FormClosing;
+            Hide();
+            facultyManager.Show();
+        }
+
+        private void logoutMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void childForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Show();
         }
     }
 }

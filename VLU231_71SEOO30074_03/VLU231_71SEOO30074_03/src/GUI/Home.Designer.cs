@@ -31,7 +31,7 @@
             this.navMenu = new System.Windows.Forms.MenuStrip();
             this.dkhpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dkdMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tchpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tchpGvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlKhoaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlNgDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlmhMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tchpSvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navMenu.SuspendLayout();
             this.pnlKhoa.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,7 +71,8 @@
             this.navMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dkhpMenuItem,
             this.dkdMenuItem,
-            this.tchpMenuItem,
+            this.tchpSvMenuItem,
+            this.tchpGvMenuItem,
             this.qlKhoaMenuItem,
             this.qlNgDMenuItem,
             this.qlmhMenuItem,
@@ -99,12 +101,12 @@
             this.dkdMenuItem.Visible = false;
             this.dkdMenuItem.Click += new System.EventHandler(this.dkdMenuItem_Click);
             // 
-            // tchpMenuItem
+            // tchpGvMenuItem
             // 
-            this.tchpMenuItem.Name = "tchpMenuItem";
-            this.tchpMenuItem.Size = new System.Drawing.Size(125, 19);
-            this.tchpMenuItem.Text = "Tra Cứu Học Phần ";
-            this.tchpMenuItem.Visible = false;
+            this.tchpGvMenuItem.Name = "tchpGvMenuItem";
+            this.tchpGvMenuItem.Size = new System.Drawing.Size(125, 19);
+            this.tchpGvMenuItem.Text = "Tra Cứu Học Phần ";
+            this.tchpGvMenuItem.Visible = false;
             // 
             // qlKhoaMenuItem
             // 
@@ -336,6 +338,14 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // tchpSvMenuItem
+            // 
+            this.tchpSvMenuItem.Name = "tchpSvMenuItem";
+            this.tchpSvMenuItem.Size = new System.Drawing.Size(125, 19);
+            this.tchpSvMenuItem.Text = "Tra Cứu Học Phần ";
+            this.tchpSvMenuItem.Visible = false;
+            this.tchpSvMenuItem.Click += new System.EventHandler(this.tchpSvMenuItem_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,7 +382,7 @@
         private System.Windows.Forms.ToolStripMenuItem qldMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dkdMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tchpMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tchpGvMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblMa;
@@ -390,5 +400,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem qlKhoaMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tchpSvMenuItem;
     }
 }

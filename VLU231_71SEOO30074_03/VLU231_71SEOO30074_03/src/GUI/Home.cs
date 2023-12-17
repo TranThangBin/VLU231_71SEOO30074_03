@@ -40,15 +40,15 @@ namespace VLU231_71SEOO30074_03.src.GUI
                         txtKhoa.Text = user.Khoa.Ten;
                         pnlKhoa.Visible =
                             dkdMenuItem.Visible =
-                            tchpMenuItem.Visible =
-                            tchpMenuItem.Visible =
+                            tchpGvMenuItem.Visible =
+                            tchpGvMenuItem.Visible =
                                 true;
                         break;
                     case (byte)LoaiNguoiDung.SinhVien:
                         lblUser.Text = "Thông tin sinh viên";
                         lblMa.Text = "MSSV:";
                         txtKhoa.Text = user.Khoa.Ten;
-                        pnlKhoa.Visible = dkhpMenuItem.Visible = tchpMenuItem.Visible = true;
+                        pnlKhoa.Visible = dkhpMenuItem.Visible = tchpSvMenuItem.Visible = true;
                         break;
                     default:
                         lblUser.Text = "Thông tin quản trị viên";
@@ -128,6 +128,14 @@ namespace VLU231_71SEOO30074_03.src.GUI
             teachingRegistration.FormClosing += childForm_FormClosing;
             Hide();
             teachingRegistration.Show();
+        }
+
+        private void tchpSvMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentClassLookUp studentClassLookUp = new StudentClassLookUp();
+            studentClassLookUp.FormClosing += childForm_FormClosing;
+            Hide();
+            studentClassLookUp.Show();
         }
     }
 }

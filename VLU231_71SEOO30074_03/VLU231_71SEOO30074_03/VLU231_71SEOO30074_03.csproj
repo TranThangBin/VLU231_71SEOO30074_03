@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\BUS\NguoiDungBUS.cs" />
     <Compile Include="src\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,23 +106,17 @@
     <Compile Include="src\GUI\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\StudentManager.cs">
+    <Compile Include="src\GUI\UserManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\StudentManager.Designer.cs">
-      <DependentUpon>StudentManager.cs</DependentUpon>
+    <Compile Include="src\GUI\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\subject management.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\GUI\subject management.Designer.cs">
       <DependentUpon>subject management.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\GUI\teacher management.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\GUI\teacher management.Designer.cs">
-      <DependentUpon>teacher management.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\Teaching schedule.cs">
       <SubType>Form</SubType>
@@ -163,11 +158,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\BUS\AuthBUS.cs" />
     <Compile Include="src\BUS\DiemBUS.cs" />
-    <Compile Include="src\BUS\GiangVienBUS.cs" />
     <Compile Include="src\BUS\KhoaBUS.cs" />
     <Compile Include="src\BUS\LopHpBUS.cs" />
     <Compile Include="src\BUS\MonHocBUS.cs" />
-    <Compile Include="src\BUS\SinhVienBUS.cs" />
     <Compile Include="src\Khoa.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -198,14 +191,11 @@
     <EmbeddedResource Include="src\GUI\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\StudentManager.resx">
-      <DependentUpon>StudentManager.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\subject management.resx">
       <DependentUpon>subject management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\teacher management.resx">
-      <DependentUpon>teacher management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\Teaching schedule.resx">
       <DependentUpon>Teaching schedule.cs</DependentUpon>

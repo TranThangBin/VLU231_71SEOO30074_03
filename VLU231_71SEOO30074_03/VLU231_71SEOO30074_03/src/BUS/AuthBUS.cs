@@ -30,13 +30,13 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 }
                 switch (taiKhoan.NguoiDung.Loai)
                 {
-                    case GiangVienBUS.MaLoai:
+                    case (byte)LoaiNguoiDung.GiangVien:
                         user = await db.NguoiDungs
                             .Include(giangVien => giangVien.Khoa)
                             .Include(giangVien => giangVien.LopHps)
                             .FirstAsync(nguoiDung => nguoiDung.Ma == taiKhoan.MaNgD);
                         break;
-                    case SinhVienBUS.MaLoai:
+                    case (byte)LoaiNguoiDung.SinhVien:
                         user = await db.NguoiDungs
                             .Include(sinhVien => sinhVien.Khoa)
                             .Include(sinhVien => sinhVien.LopHps)

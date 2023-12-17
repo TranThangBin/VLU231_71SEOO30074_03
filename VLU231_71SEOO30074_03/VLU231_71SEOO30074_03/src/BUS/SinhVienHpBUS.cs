@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
-    internal class SinhVienLopHpBUS
+    internal class SinhVienHpBUS
     {
-        private const int diemQuaMon = 5;
+        private const int DiemQuaMon = 5;
 
-        public static void UseSinhVienLopHps(string maSv, Action<IQueryable<SinhvienHp>> callback)
+        public static void UseSinhVienHps(string maSv, Action<IQueryable<SinhvienHp>> callback)
         {
             using (var db = new QLDKHPEntities())
             {
@@ -30,9 +30,9 @@ namespace VLU231_71SEOO30074_03.src.BUS
                         return;
                     }
                     if (
-                        hpTienQuyet.Diem.DiemTrongLop < diemQuaMon
-                        && hpTienQuyet.Diem.DiemGiuaKy < diemQuaMon
-                        && hpTienQuyet.Diem.DiemCuoiKy < diemQuaMon
+                        hpTienQuyet.Diem.DiemTrongLop < DiemQuaMon
+                        || hpTienQuyet.Diem.DiemGiuaKy < DiemQuaMon
+                        || hpTienQuyet.Diem.DiemCuoiKy < DiemQuaMon
                     )
                     {
                         return;

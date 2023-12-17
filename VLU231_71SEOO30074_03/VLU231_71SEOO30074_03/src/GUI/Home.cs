@@ -121,5 +121,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
             Hide();
             classRegistration.Show();
         }
+
+        private void dkdMenuItem_Click(object sender, EventArgs e)
+        {
+            TeachingRegistration teachingRegistration = new TeachingRegistration();
+            teachingRegistration.FormClosing += childForm_FormClosing;
+            Hide();
+            teachingRegistration.Show();
+        }
     }
 }

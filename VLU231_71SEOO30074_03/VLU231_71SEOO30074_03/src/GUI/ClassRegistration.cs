@@ -27,7 +27,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     cmbMonHoc.Items.Add(monHoc);
                 }
             });
-            SinhVienLopHpBUS.UseSinhVienLopHps(
+            SinhVienHpBUS.UseSinhVienHps(
                 maSv,
                 sinhVienLopHps =>
                 {
@@ -78,7 +78,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
             {
                 maSv = user.Ma;
             });
-            SinhVienLopHpBUS.DangKyHocPhan(maSv, lopHp.Ma);
+            SinhVienHpBUS.DangKyHocPhan(maSv, lopHp.Ma);
             dgvKqDk.Rows.Add(monHoc, lopHp);
         }
 
@@ -93,7 +93,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                 });
                 MonHoc monHoc = (MonHoc)dgvKqDk.Rows[e.RowIndex].Cells["monHoc"].Value;
                 LopHp lopHp = (LopHp)dgvKqDk.Rows[e.RowIndex].Cells["lopHp"].Value;
-                SinhVienLopHpBUS.HuyHocPhan(maSv, lopHp.Ma);
+                SinhVienHpBUS.HuyHocPhan(maSv, lopHp.Ma);
                 dgvKqDk.Rows.RemoveAt(e.RowIndex);
             }
         }

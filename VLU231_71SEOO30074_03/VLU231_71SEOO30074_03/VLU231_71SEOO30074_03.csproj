@@ -63,8 +63,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\BUS\GiangVienHpBUS.cs" />
     <Compile Include="src\BUS\NguoiDungBUS.cs" />
-    <Compile Include="src\BUS\SinhVienLopHpBUS.cs" />
+    <Compile Include="src\BUS\SinhVienHpBUS.cs" />
     <Compile Include="src\DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,11 +120,11 @@
     <Compile Include="src\GUI\SubjectManager.Designer.cs">
       <DependentUpon>SubjectManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\Teaching schedule.cs">
+    <Compile Include="src\GUI\TeachRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\Teaching schedule.Designer.cs">
-      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    <Compile Include="src\GUI\TeachRegistration.Designer.cs">
+      <DependentUpon>TeachRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\Login.cs">
       <SubType>Form</SubType>
@@ -195,8 +196,8 @@
     <EmbeddedResource Include="src\GUI\SubjectManager.resx">
       <DependentUpon>SubjectManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\Teaching schedule.resx">
-      <DependentUpon>Teaching schedule.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\TeachRegistration.resx">
+      <DependentUpon>TeachRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

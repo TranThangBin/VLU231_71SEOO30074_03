@@ -97,6 +97,7 @@
             this.dkdMenuItem.Size = new System.Drawing.Size(125, 19);
             this.dkdMenuItem.Text = "Đăng Ký Dạy";
             this.dkdMenuItem.Visible = false;
+            this.dkdMenuItem.Click += new System.EventHandler(this.dkdMenuItem_Click);
             // 
             // tchpMenuItem
             // 

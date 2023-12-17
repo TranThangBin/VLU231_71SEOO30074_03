@@ -89,6 +89,7 @@
             this.dkhpMenuItem.Size = new System.Drawing.Size(125, 19);
             this.dkhpMenuItem.Text = "Đăng Ký Học Phần";
             this.dkhpMenuItem.Visible = false;
+            this.dkhpMenuItem.Click += new System.EventHandler(this.dkhpMenuItem_Click);
             // 
             // dkdMenuItem
             // 

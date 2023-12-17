@@ -1,24 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
     internal class LopHpBUS
     {
-        public static void InsertLopHp(string maMonHoc)
+        public static void UseLopHps(Action<IQueryable<LopHp>> callback)
         {
-            LopHp lophp = new LopHp() { MaMonHoc = maMonHoc };
             using (var db = new QLDKHPEntities())
             {
-                db.LopHps.Add(lophp);
+                callback(db.LopHps);
+            }
+        }
+
+        public static void InsertLopHp(LopHp lopHp)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                db.LopHps.Add(new LopHp() { Ma = lopHp.Ma, MaMonHoc = lopHp.MaMonHoc, });
                 db.SaveChanges();
             }
         }
 
-        public static void updateLopHp(string maLopHP, LopHp lopHpMoi)
+        public static void UpdateLopHp(string maLopHP, LopHp lopHpMoi)
         {
             using (var db = new QLDKHPEntities())
             {
@@ -27,12 +31,11 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 {
                     return;
                 }
-                lophp.Ma = lopHpMoi.Ma;
                 db.SaveChanges();
             }
         }
 
-        public static void deleteLopHp(string maLopHP)
+        public static void DeleteLopHp(string maLopHP)
         {
             using (var db = new QLDKHPEntities())
             {

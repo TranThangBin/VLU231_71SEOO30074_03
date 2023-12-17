@@ -134,6 +134,7 @@
             this.qllhpMenuItem.Size = new System.Drawing.Size(125, 19);
             this.qllhpMenuItem.Text = "Quản Lý Lớp HP";
             this.qllhpMenuItem.Visible = false;
+            this.qllhpMenuItem.Click += new System.EventHandler(this.qllhpMenuItem_Click);
             // 
             // qldMenuItem
             // 

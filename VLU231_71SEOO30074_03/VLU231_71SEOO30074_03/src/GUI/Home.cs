@@ -94,5 +94,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
             Hide();
             subjectManager.Show();
         }
+
+        private void qllhpMenuItem_Click(object sender, EventArgs e)
+        {
+            ClassManager classManager = new ClassManager();
+            classManager.FormClosing += childForm_FormClosing;
+            Hide();
+            classManager.Show();
+        }
     }
 }

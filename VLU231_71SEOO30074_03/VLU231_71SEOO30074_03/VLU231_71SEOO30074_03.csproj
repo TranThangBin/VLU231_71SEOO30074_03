@@ -82,11 +82,11 @@
     <Compile Include="src\Diem.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\Class manager.cs">
+    <Compile Include="src\GUI\ClassManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\Class manager.Designer.cs">
-      <DependentUpon>Class manager.cs</DependentUpon>
+    <Compile Include="src\GUI\ClassManager.Designer.cs">
+      <DependentUpon>ClassManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\FacultyManager.cs">
       <SubType>Form</SubType>
@@ -182,8 +182,8 @@
     <Compile Include="src\TaiKhoan.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="src\GUI\Class manager.resx">
-      <DependentUpon>Class manager.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\ClassManager.resx">
+      <DependentUpon>ClassManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\FacultyManager.resx">
       <DependentUpon>FacultyManager.cs</DependentUpon>

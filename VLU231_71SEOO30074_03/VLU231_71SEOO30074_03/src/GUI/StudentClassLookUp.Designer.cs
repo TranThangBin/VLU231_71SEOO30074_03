@@ -134,9 +134,10 @@
             this.dgvHp.ReadOnly = true;
             this.dgvHp.RowHeadersWidth = 62;
             this.dgvHp.RowTemplate.Height = 28;
+            this.dgvHp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHp.Size = new System.Drawing.Size(498, 199);
             this.dgvHp.TabIndex = 4;
-            this.dgvHp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHp_CellContentClick);
+            this.dgvHp.Enter += new System.EventHandler(this.dgvHp_Enter);
             // 
             // diem
             // 

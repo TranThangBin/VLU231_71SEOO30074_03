@@ -7,11 +7,11 @@ namespace VLU231_71SEOO30074_03.src.BUS
     {
         private const int DiemQuaMon = 5;
 
-        public static void UseSinhVienHps(string maSv, Action<IQueryable<SinhvienHp>> callback)
+        public static void UseSinhVienHps(Action<IQueryable<SinhvienHp>> callback)
         {
             using (var db = new QLDKHPEntities())
             {
-                callback(db.SinhvienHps.Where(sinhvienHp => sinhvienHp.MaSinhVien == maSv));
+                callback(db.SinhvienHps);
             }
         }
 

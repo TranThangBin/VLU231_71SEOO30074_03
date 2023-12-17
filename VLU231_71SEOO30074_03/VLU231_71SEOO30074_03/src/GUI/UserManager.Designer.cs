@@ -158,6 +158,7 @@
             this.dgvNguoiDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNguoiDung.Size = new System.Drawing.Size(737, 117);
             this.dgvNguoiDung.TabIndex = 0;
+            this.dgvNguoiDung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiDung_CellContentClick);
             this.dgvNguoiDung.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiDung_CellEnter);
             // 
             // maNgD

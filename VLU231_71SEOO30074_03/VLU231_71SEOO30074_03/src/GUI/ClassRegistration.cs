@@ -27,16 +27,15 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     cmbMonHoc.Items.Add(monHoc);
                 }
             });
-            SinhVienHpBUS.UseSinhVienHps(
-                maSv,
-                sinhVienLopHps =>
+            SinhVienHpBUS.UseSinhVienHps(sinhVienLopHps =>
+            {
+                foreach (
+                    SinhvienHp sinhvienHp in sinhVienLopHps.Where(svhp => svhp.MaSinhVien == maSv)
+                )
                 {
-                    foreach (SinhvienHp sinhvienHp in sinhVienLopHps)
-                    {
-                        dgvKqDk.Rows.Add(sinhvienHp.LopHp.MonHoc, sinhvienHp.LopHp);
-                    }
+                    dgvKqDk.Rows.Add(sinhvienHp.LopHp.MonHoc, sinhvienHp.LopHp);
                 }
-            );
+            });
             if (cmbMonHoc.Items.Count > 0)
             {
                 cmbMonHoc.SelectedIndex = 0;

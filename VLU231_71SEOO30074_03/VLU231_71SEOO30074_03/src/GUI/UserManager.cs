@@ -177,6 +177,11 @@ namespace VLU231_71SEOO30074_03.src.GUI
                 txtTk.Text = taiKhoan.TenTk;
                 txtMk.Text = taiKhoan.MatKhau;
             }
+            else
+            {
+                txtTk.Text = string.Empty;
+                txtMk.Text = string.Empty;
+            }
         }
 
         private void btnTaoTk_Click(object sender, EventArgs e)
@@ -220,5 +225,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                 )
             );
         }
+
+        private void dgvNguoiDung_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

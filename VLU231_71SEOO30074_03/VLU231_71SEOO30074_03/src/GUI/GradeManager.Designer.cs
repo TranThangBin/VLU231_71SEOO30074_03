@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBoxMH = new System.Windows.Forms.ComboBox();
+            this.cmbMonHoc = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBoxLH = new System.Windows.Forms.ComboBox();
+            this.cmbLopHoc = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBoxKhoa = new System.Windows.Forms.ComboBox();
+            this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvSv = new System.Windows.Forms.DataGridView();
-            this.refer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maSv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +48,12 @@
             this.diaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numDiemCuoiKy = new System.Windows.Forms.NumericUpDown();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.numDiemGiuaKy = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numDiemQuaTrinh = new System.Windows.Forms.NumericUpDown();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,19 +61,19 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSv)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemQuaTrinh)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
             this.groupBox4.AutoSize = true;
             this.groupBox4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox4.Controls.Add(this.comboBoxMH);
+            this.groupBox4.Controls.Add(this.cmbMonHoc);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(217, 27);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
@@ -84,21 +84,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Môn Học:";
             // 
-            // comboBoxMH
+            // cmbMonHoc
             // 
-            this.comboBoxMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMH.FormattingEnabled = true;
-            this.comboBoxMH.Location = new System.Drawing.Point(4, 19);
-            this.comboBoxMH.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxMH.Name = "comboBoxMH";
-            this.comboBoxMH.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxMH.TabIndex = 0;
+            this.cmbMonHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonHoc.FormattingEnabled = true;
+            this.cmbMonHoc.Location = new System.Drawing.Point(4, 19);
+            this.cmbMonHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMonHoc.Name = "cmbMonHoc";
+            this.cmbMonHoc.Size = new System.Drawing.Size(141, 21);
+            this.cmbMonHoc.TabIndex = 0;
+            this.cmbMonHoc.SelectedIndexChanged += new System.EventHandler(this.cmbMonHoc_SelectedIndexChanged);
             // 
             // groupBox5
             // 
             this.groupBox5.AutoSize = true;
             this.groupBox5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox5.Controls.Add(this.comboBoxLH);
+            this.groupBox5.Controls.Add(this.cmbLopHoc);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(392, 27);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
@@ -109,21 +110,22 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Lớp Học:";
             // 
-            // comboBoxLH
+            // cmbLopHoc
             // 
-            this.comboBoxLH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxLH.FormattingEnabled = true;
-            this.comboBoxLH.Location = new System.Drawing.Point(4, 19);
-            this.comboBoxLH.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxLH.Name = "comboBoxLH";
-            this.comboBoxLH.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxLH.TabIndex = 0;
+            this.cmbLopHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLopHoc.FormattingEnabled = true;
+            this.cmbLopHoc.Location = new System.Drawing.Point(4, 19);
+            this.cmbLopHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbLopHoc.Name = "cmbLopHoc";
+            this.cmbLopHoc.Size = new System.Drawing.Size(141, 21);
+            this.cmbLopHoc.TabIndex = 0;
+            this.cmbLopHoc.SelectedIndexChanged += new System.EventHandler(this.cmbLopHoc_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
             this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox2.Controls.Add(this.comboBoxKhoa);
+            this.groupBox2.Controls.Add(this.cmbKhoa);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(47, 27);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -134,15 +136,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Khoa:";
             // 
-            // comboBoxKhoa
+            // cmbKhoa
             // 
-            this.comboBoxKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxKhoa.FormattingEnabled = true;
-            this.comboBoxKhoa.Location = new System.Drawing.Point(4, 17);
-            this.comboBoxKhoa.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxKhoa.Name = "comboBoxKhoa";
-            this.comboBoxKhoa.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxKhoa.TabIndex = 0;
+            this.cmbKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKhoa.FormattingEnabled = true;
+            this.cmbKhoa.Location = new System.Drawing.Point(4, 17);
+            this.cmbKhoa.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbKhoa.Name = "cmbKhoa";
+            this.cmbKhoa.Size = new System.Drawing.Size(141, 21);
+            this.cmbKhoa.TabIndex = 0;
+            this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // groupBox6
             // 
@@ -175,53 +178,56 @@
             // 
             this.dgvSv.AllowUserToAddRows = false;
             this.dgvSv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.refer,
+            this.sinhVien,
             this.maSv,
             this.tenSv,
             this.ngaySinh,
             this.queQuan,
             this.diaChi});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSv.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSv.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSv.Location = new System.Drawing.Point(2, 2);
             this.dgvSv.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSv.Name = "dgvSv";
             this.dgvSv.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSv.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSv.RowHeadersWidth = 62;
             this.dgvSv.RowTemplate.Height = 28;
+            this.dgvSv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSv.Size = new System.Drawing.Size(556, 112);
             this.dgvSv.TabIndex = 0;
+            this.dgvSv.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSv_CellEnter);
+            this.dgvSv.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvSv_RowsAdded);
             // 
-            // refer
+            // sinhVien
             // 
-            this.refer.HeaderText = "ref";
-            this.refer.Name = "refer";
-            this.refer.ReadOnly = true;
-            this.refer.Visible = false;
+            this.sinhVien.HeaderText = "sinhVien";
+            this.sinhVien.Name = "sinhVien";
+            this.sinhVien.ReadOnly = true;
+            this.sinhVien.Visible = false;
             // 
             // maSv
             // 
@@ -267,6 +273,7 @@
             this.btnLuu.TabIndex = 6;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // groupBox3
             // 
@@ -283,81 +290,11 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bảng điểm";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(19, 28);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(232, 64);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Điểm quá trình:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown1.Location = new System.Drawing.Point(5, 22);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(222, 22);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.AutoSize = true;
-            this.groupBox7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox7.Controls.Add(this.numericUpDown2);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(19, 97);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox7.Size = new System.Drawing.Size(232, 64);
-            this.groupBox7.TabIndex = 3;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Điểm giữa trình:";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown2.Location = new System.Drawing.Point(5, 22);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(222, 22);
-            this.numericUpDown2.TabIndex = 2;
-            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // groupBox8
             // 
             this.groupBox8.AutoSize = true;
             this.groupBox8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox8.Controls.Add(this.numericUpDown3);
+            this.groupBox8.Controls.Add(this.numDiemCuoiKy);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(19, 165);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
@@ -368,25 +305,95 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Điểm cuối kỳ";
             // 
-            // numericUpDown3
+            // numDiemCuoiKy
             // 
-            this.numericUpDown3.DecimalPlaces = 2;
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown3.Increment = new decimal(new int[] {
+            this.numDiemCuoiKy.DecimalPlaces = 2;
+            this.numDiemCuoiKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDiemCuoiKy.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDown3.Location = new System.Drawing.Point(5, 22);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.numDiemCuoiKy.Location = new System.Drawing.Point(5, 22);
+            this.numDiemCuoiKy.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(222, 22);
-            this.numericUpDown3.TabIndex = 2;
-            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemCuoiKy.Name = "numDiemCuoiKy";
+            this.numDiemCuoiKy.Size = new System.Drawing.Size(222, 22);
+            this.numDiemCuoiKy.TabIndex = 2;
+            this.numDiemCuoiKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.AutoSize = true;
+            this.groupBox7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox7.Controls.Add(this.numDiemGiuaKy);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(19, 97);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox7.Size = new System.Drawing.Size(232, 64);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Điểm giữa trình:";
+            // 
+            // numDiemGiuaKy
+            // 
+            this.numDiemGiuaKy.DecimalPlaces = 2;
+            this.numDiemGiuaKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDiemGiuaKy.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numDiemGiuaKy.Location = new System.Drawing.Point(5, 22);
+            this.numDiemGiuaKy.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDiemGiuaKy.Name = "numDiemGiuaKy";
+            this.numDiemGiuaKy.Size = new System.Drawing.Size(222, 22);
+            this.numDiemGiuaKy.TabIndex = 2;
+            this.numDiemGiuaKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.numDiemQuaTrinh);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(19, 28);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(232, 64);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Điểm quá trình:";
+            // 
+            // numDiemQuaTrinh
+            // 
+            this.numDiemQuaTrinh.DecimalPlaces = 2;
+            this.numDiemQuaTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDiemQuaTrinh.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numDiemQuaTrinh.Location = new System.Drawing.Point(5, 22);
+            this.numDiemQuaTrinh.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numDiemQuaTrinh.Name = "numDiemQuaTrinh";
+            this.numDiemQuaTrinh.Size = new System.Drawing.Size(222, 22);
+            this.numDiemQuaTrinh.TabIndex = 2;
+            this.numDiemQuaTrinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // GradeManager
             // 
@@ -401,7 +408,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GradeManager";
             this.Text = "Quản lý điểm";
-            this.Load += new System.EventHandler(this.point_management_Load);
+            this.Load += new System.EventHandler(this.GradeManager_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -411,12 +418,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSv)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemQuaTrinh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,27 +431,27 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBoxMH;
+        private System.Windows.Forms.ComboBox cmbMonHoc;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBoxLH;
+        private System.Windows.Forms.ComboBox cmbLopHoc;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBoxKhoa;
+        private System.Windows.Forms.ComboBox cmbKhoa;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dgvSv;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn refer;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.NumericUpDown numDiemCuoiKy;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.NumericUpDown numDiemGiuaKy;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown numDiemQuaTrinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn maSv;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn queQuan;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

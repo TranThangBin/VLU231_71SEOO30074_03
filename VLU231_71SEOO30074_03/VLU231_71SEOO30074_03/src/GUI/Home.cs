@@ -102,5 +102,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
             Hide();
             classManager.Show();
         }
+
+        private void qldMenuItem_Click(object sender, EventArgs e)
+        {
+            GradeManager gradeManager = new GradeManager();
+            gradeManager.FormClosing += childForm_FormClosing;
+            Hide();
+            gradeManager.Show();
+        }
     }
 }

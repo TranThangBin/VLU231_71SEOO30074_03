@@ -1,49 +1,42 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
     internal class DiemBUS
     {
-        public static void InsertDiem(string maSinhVien, string maHp)
+        public static void UseDiems(Action<IQueryable<Diem>> callback)
         {
-            Diem grade = new Diem() { MaSinhVien = maSinhVien, MaHp = maHp, };
             using (var db = new QLDKHPEntities())
             {
-                db.Diems.Add(grade);
-                db.SaveChanges();
+                callback(db.Diems);
             }
         }
 
-        public static void UpdateDiem(Diem DiemMoi, string maSinhVien, string maHp)
+        public static void UpdateDiem(string maSv, string maHp, Diem diem)
         {
             using (var db = new QLDKHPEntities())
             {
-                Diem grade = db.Diems.SingleOrDefault(d => d.MaSinhVien == maSinhVien && d.MaHp == maHp);
+                Diem grade = db.Diems.Find(maSv, maHp);
                 if (grade == null)
                 {
-                    return;
+                    db.Diems.Add(
+                        new Diem()
+                        {
+                            MaSinhVien = maSv,
+                            MaHp = maHp,
+                            DiemTrongLop = diem.DiemTrongLop,
+                            DiemGiuaKy = diem.DiemGiuaKy,
+                            DiemCuoiKy = diem.DiemCuoiKy,
+                        }
+                    );
                 }
-                grade.DiemTrongLop = DiemMoi.DiemTrongLop;
-                grade.DiemGiuaKy = DiemMoi.DiemGiuaKy;
-                grade.DiemCuoiKy = DiemMoi.DiemCuoiKy;
-                db.SaveChanges();
-            }
-        }
-
-        public static void deleteDiem(string maSinhVien, string maHp)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                Diem grade = db.Diems.SingleOrDefault(d => d.MaSinhVien == maSinhVien && d.MaHp == maHp);
-                if (grade == null)
+                else
                 {
-                    return;
+                    grade.DiemTrongLop = diem.DiemTrongLop;
+                    grade.DiemGiuaKy = diem.DiemGiuaKy;
+                    grade.DiemCuoiKy = diem.DiemCuoiKy;
                 }
-                db.Diems.Remove(grade);
                 db.SaveChanges();
             }
         }

@@ -142,6 +142,7 @@
             this.qldMenuItem.Size = new System.Drawing.Size(125, 19);
             this.qldMenuItem.Text = "Quản lý Điểm";
             this.qldMenuItem.Visible = false;
+            this.qldMenuItem.Click += new System.EventHandler(this.qldMenuItem_Click);
             // 
             // logoutMenuItem
             // 

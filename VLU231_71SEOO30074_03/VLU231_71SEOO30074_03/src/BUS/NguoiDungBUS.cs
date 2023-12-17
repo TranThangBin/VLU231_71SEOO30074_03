@@ -1,6 +1,5 @@
-﻿using System.Data.Entity;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
@@ -12,44 +11,46 @@ namespace VLU231_71SEOO30074_03.src.BUS
 
     internal class NguoiDungBUS
     {
-        public static List<NguoiDung> NguoiDungs(LoaiNguoiDung loaiNguoiDung)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                return db.NguoiDungs
-                    .Include(sinhVien => sinhVien.Khoa)
-                    .Include(sinhVien => sinhVien.TaiKhoan)
-                    .Where(nguoiDung => nguoiDung.Loai == (byte)loaiNguoiDung)
-                    .ToList();
-            }
-        }
-
-        public static NguoiDung InsertNguoiDung(NguoiDung nguoiDung, LoaiNguoiDung loaiNguoiDung)
-        {
-            if (nguoiDung.Loai != (byte)loaiNguoiDung)
-            {
-                return null;
-            }
-            using (var db = new QLDKHPEntities())
-            {
-                NguoiDung ngD = db.NguoiDungs.Add(nguoiDung);
-                db.SaveChanges();
-                return ngD;
-            }
-        }
-
-        public static NguoiDung UpdateNguoiDung(
-            string maNgD,
-            NguoiDung nguoiDungMoi,
-            LoaiNguoiDung loaiNguoiDung
+        public static void UseNguoiDungs(
+            LoaiNguoiDung loaiNguoiDung,
+            Action<IQueryable<NguoiDung>> callback
         )
         {
             using (var db = new QLDKHPEntities())
             {
+                callback(db.NguoiDungs.Where(nguoiDung => nguoiDung.Loai == (byte)loaiNguoiDung));
+            }
+        }
+
+        public static void InsertNguoiDung(NguoiDung nguoiDung, LoaiNguoiDung loaiNguoiDung)
+        {
+            using (var db = new QLDKHPEntities())
+            {
+                db.NguoiDungs.Add(
+                    new NguoiDung()
+                    {
+                        Ma = nguoiDung.Ma,
+                        HoTen = nguoiDung.HoTen,
+                        MaKhoa = nguoiDung.MaKhoa,
+                        NgaySinh = nguoiDung.NgaySinh,
+                        GioiTinh = nguoiDung.GioiTinh,
+                        QueQuan = nguoiDung.QueQuan,
+                        DiaChi = nguoiDung.DiaChi,
+                        Loai = (byte)loaiNguoiDung,
+                    }
+                );
+                db.SaveChanges();
+            }
+        }
+
+        public static void UpdateNguoiDung(string maNgD, NguoiDung nguoiDungMoi)
+        {
+            using (var db = new QLDKHPEntities())
+            {
                 NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
-                if (nguoiDung?.Loai != (byte)loaiNguoiDung)
+                if (nguoiDung?.Loai != nguoiDungMoi.Loai)
                 {
-                    return null;
+                    return;
                 }
                 nguoiDung.HoTen = nguoiDungMoi.HoTen;
                 nguoiDung.MaKhoa = nguoiDungMoi.MaKhoa;
@@ -58,89 +59,71 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 nguoiDung.QueQuan = nguoiDungMoi.QueQuan;
                 nguoiDung.DiaChi = nguoiDungMoi.DiaChi;
                 db.SaveChanges();
-                return nguoiDung;
             }
         }
 
-        public static NguoiDung DeleteNguoiDung(string maNgD, LoaiNguoiDung loaiNguoiDung)
+        public static void DeleteNguoiDung(string maNgD)
         {
             using (var db = new QLDKHPEntities())
             {
                 NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
-                if (nguoiDung?.Loai != (byte)loaiNguoiDung)
+                if (nguoiDung == null)
                 {
-                    return null;
+                    return;
                 }
                 db.NguoiDungs.Remove(nguoiDung);
                 db.SaveChanges();
-                return nguoiDung;
             }
         }
 
-        public static TaiKhoan GetTaiKhoanNguoiDung(string maNgD, LoaiNguoiDung loaiNguoiDung)
+        public static TaiKhoan GetTaiKhoanNguoiDung(string maNgD)
         {
             using (var db = new QLDKHPEntities())
             {
-                TaiKhoan tkNguoiDung = db.TaiKhoans.Find(maNgD);
-                if (tkNguoiDung?.NguoiDung.Loai != (byte)loaiNguoiDung)
-                {
-                    return null;
-                }
-                return tkNguoiDung;
+                return db.TaiKhoans.Find(maNgD);
             }
         }
 
-        public static TaiKhoan InsertTaiKhoanNguoiDung(
-            string maNgD,
-            TaiKhoan taiKhoan,
-            LoaiNguoiDung loaiNguoiDung
-        )
+        public static void InsertTaiKhoanNguoiDung(string maNgD, TaiKhoan taiKhoan)
         {
             using (var db = new QLDKHPEntities())
             {
                 NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
-                if (nguoiDung?.Loai != (byte)loaiNguoiDung)
+                if (nguoiDung == null)
                 {
-                    return null;
+                    return;
                 }
                 nguoiDung.TaiKhoan = taiKhoan;
                 db.SaveChanges();
-                return nguoiDung.TaiKhoan;
             }
         }
 
-        public static TaiKhoan UpdateTaiKhoanNguoiDung(
-            string maNgD,
-            TaiKhoan taiKhoanMoi,
-            LoaiNguoiDung loaiNguoiDung
-        )
+        public static void UpdateTaiKhoanNguoiDung(string maNgD, TaiKhoan taiKhoanMoi)
         {
             using (var db = new QLDKHPEntities())
             {
                 TaiKhoan taiKhoan = db.TaiKhoans.Find(maNgD);
-                if (taiKhoan?.NguoiDung.Loai != (byte)loaiNguoiDung)
+                if (taiKhoan == null)
                 {
-                    return null;
+                    return;
                 }
                 taiKhoan.TenTk = taiKhoanMoi.TenTk;
                 taiKhoan.MatKhau = taiKhoanMoi.MatKhau;
                 db.SaveChanges();
-                return taiKhoan;
             }
         }
 
-        public static TaiKhoan DeleteTaiKhoanNguoiDung(string maNgD, LoaiNguoiDung loaiNguoiDung)
+        public static void DeleteTaiKhoanNguoiDung(string maNgD)
         {
             using (var db = new QLDKHPEntities())
             {
                 TaiKhoan taiKhoan = db.TaiKhoans.Find(maNgD);
-                if (taiKhoan?.NguoiDung.Loai != (byte)loaiNguoiDung)
+                if (taiKhoan == null)
                 {
-                    return null;
+                    return;
                 }
                 db.TaiKhoans.Remove(taiKhoan);
                 db.SaveChanges();
-                return taiKhoan;
             }
         }
     }

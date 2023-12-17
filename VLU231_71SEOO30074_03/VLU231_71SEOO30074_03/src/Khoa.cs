@@ -33,7 +33,7 @@ namespace VLU231_71SEOO30074_03.src
 
         public override string ToString()
         {
-            return this.Ten;
+            return Ten;
         }
     }
 }

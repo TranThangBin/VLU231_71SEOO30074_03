@@ -40,7 +40,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                 GioiTinh = cmbGioiTinh.Text == "Nam",
                 QueQuan = txtQueQuan.Text.Trim(),
                 DiaChi = txtDiaChi.Text.Trim(),
-                Loai = (byte)cmbDoiTuong_GetValue(),
+                Khoa = khoa,
             };
         }
 
@@ -81,38 +81,20 @@ namespace VLU231_71SEOO30074_03.src.GUI
         private void StudenManager_Load(object sender, EventArgs e)
         {
             cmbDoiTuong.SelectedItem = cmbDoiTuong.Items[0];
-            foreach (Khoa khoa in KhoaBUS.Khoas)
+            KhoaBUS.UseKhoas(khoas =>
             {
-                cmbKhoa.Items.Add(khoa);
-            }
+                foreach (Khoa khoa in khoas)
+                {
+                    cmbKhoa.Items.Add(khoa);
+                }
+            });
             cmbKhoa.SelectedItem = cmbKhoa.Items[0];
-        }
-
-        private void NguoiDung_Load()
-        {
-            dgvNguoiDung.Rows.Clear();
-            foreach (NguoiDung nguoiDung in NguoiDungBUS.NguoiDungs(cmbDoiTuong_GetValue()))
-            {
-                dgvNguoiDung.Rows.Add(
-                    nguoiDung.Ma,
-                    nguoiDung.HoTen,
-                    nguoiDung.Khoa,
-                    nguoiDung.NgaySinh,
-                    nguoiDung.GioiTinh ? "Nam" : "Nữ",
-                    nguoiDung.QueQuan,
-                    nguoiDung.DiaChi
-                );
-            }
         }
 
         private void btnThemNgD_Click(object sender, EventArgs e)
         {
             NguoiDung nguoiDung = GetNguoiDung();
-            nguoiDung = NguoiDungBUS.InsertNguoiDung(nguoiDung, cmbDoiTuong_GetValue());
-            if (nguoiDung == null)
-            {
-                return;
-            }
+            NguoiDungBUS.InsertNguoiDung(nguoiDung, cmbDoiTuong_GetValue());
             dgvNguoiDung.Rows.Add(
                 nguoiDung.Ma,
                 nguoiDung.HoTen,
@@ -133,15 +115,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                 return;
             }
             NguoiDung nguoiDung = GetNguoiDung();
-            nguoiDung = NguoiDungBUS.UpdateNguoiDung(
-                selectedNguoiDung.Ma,
-                nguoiDung,
-                cmbDoiTuong_GetValue()
-            );
-            if (nguoiDung == null)
-            {
-                return;
-            }
+            NguoiDungBUS.UpdateNguoiDung(selectedNguoiDung.Ma, nguoiDung);
             int selectedIndex = dgvNguoiDung.SelectedRows[0].Index;
             dgvNguoiDung.Rows.RemoveAt(selectedIndex);
             dgvNguoiDung.Rows.Insert(
@@ -164,11 +138,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
             {
                 return;
             }
-            nguoiDung = NguoiDungBUS.DeleteNguoiDung(nguoiDung.Ma, cmbDoiTuong_GetValue());
-            if (nguoiDung == null)
-            {
-                return;
-            }
+            NguoiDungBUS.DeleteNguoiDung(nguoiDung.Ma);
             dgvNguoiDung.Rows.Remove(dgvNguoiDung.SelectedRows[0]);
             ClearInput();
         }
@@ -201,10 +171,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
             txtDiaChi.Text = nguoiDung.DiaChi;
             txtTk.Enabled = true;
             txtMk.Enabled = true;
-            TaiKhoan taiKhoan = NguoiDungBUS.GetTaiKhoanNguoiDung(
-                nguoiDung.Ma,
-                cmbDoiTuong_GetValue()
-            );
+            TaiKhoan taiKhoan = NguoiDungBUS.GetTaiKhoanNguoiDung(nguoiDung.Ma);
             if (taiKhoan != null)
             {
                 txtTk.Text = taiKhoan.TenTk;
@@ -214,32 +181,44 @@ namespace VLU231_71SEOO30074_03.src.GUI
 
         private void btnTaoTk_Click(object sender, EventArgs e)
         {
-            NguoiDungBUS.InsertTaiKhoanNguoiDung(
-                GetNguoiDung().Ma,
-                GetTaiKhoan(),
-                cmbDoiTuong_GetValue()
-            );
+            NguoiDungBUS.InsertTaiKhoanNguoiDung(GetNguoiDung().Ma, GetTaiKhoan());
         }
 
         private void btnSuaTk_Click(object sender, EventArgs e)
         {
-            NguoiDungBUS.UpdateTaiKhoanNguoiDung(
-                GetNguoiDung().Ma,
-                GetTaiKhoan(),
-                cmbDoiTuong_GetValue()
-            );
+            NguoiDungBUS.UpdateTaiKhoanNguoiDung(GetNguoiDung().Ma, GetTaiKhoan());
         }
 
         private void btnXoaTk_Click(object sender, EventArgs e)
         {
-            NguoiDungBUS.DeleteTaiKhoanNguoiDung(GetNguoiDung().Ma, cmbDoiTuong_GetValue());
+            NguoiDungBUS.DeleteTaiKhoanNguoiDung(GetNguoiDung().Ma);
             txtTk.Clear();
             txtMk.Clear();
         }
 
         private void cmbDoiTuong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            NguoiDung_Load();
+            dgvNguoiDung.Rows.Clear();
+            NguoiDungBUS.UseNguoiDungs(
+                cmbDoiTuong_GetValue(),
+                (
+                    nguoiDungs =>
+                    {
+                        foreach (NguoiDung nguoiDung in nguoiDungs)
+                        {
+                            dgvNguoiDung.Rows.Add(
+                                nguoiDung.Ma,
+                                nguoiDung.HoTen,
+                                nguoiDung.Khoa,
+                                nguoiDung.NgaySinh,
+                                nguoiDung.GioiTinh ? "Nam" : "Nữ",
+                                nguoiDung.QueQuan,
+                                nguoiDung.DiaChi
+                            );
+                        }
+                    }
+                )
+            );
         }
     }
 }

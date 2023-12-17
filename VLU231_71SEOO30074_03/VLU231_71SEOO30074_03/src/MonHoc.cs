@@ -33,5 +33,10 @@ namespace VLU231_71SEOO30074_03.src
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonHoc> MonHoc1 { get; set; }
         public virtual MonHoc MonHoc2 { get; set; }
+
+        public override string ToString()
+        {
+            return Ten;
+        }
     }
 }

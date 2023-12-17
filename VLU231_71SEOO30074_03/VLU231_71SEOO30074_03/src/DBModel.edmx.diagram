@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c6921cf505814092a179e446c18f7156" Name="Diagram1">
+      <Diagram DiagramId="9766e242fcb64987a3f685b61cb4593c" Name="Diagram1">
         <EntityTypeShape EntityType="QLDKHPModel.Diem" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.Khoa" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.LopHp" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.MonHoc" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.NguoiDung" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.SinhvienHp" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDKHPModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLDKHPModel.TaiKhoan" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="QLDKHPModel.FK__Diem__59063A47" ManuallyRouted="false" />
         <AssociationConnector Association="QLDKHPModel.FK__MonHoc__MaKhoa__46E78A0C" ManuallyRouted="false" />

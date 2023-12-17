@@ -112,11 +112,11 @@
     <Compile Include="src\GUI\UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\GUI\subject management.cs">
+    <Compile Include="src\GUI\SubjectManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\subject management.Designer.cs">
-      <DependentUpon>subject management.cs</DependentUpon>
+    <Compile Include="src\GUI\SubjectManager.Designer.cs">
+      <DependentUpon>SubjectManager.cs</DependentUpon>
     </Compile>
     <Compile Include="src\GUI\Teaching schedule.cs">
       <SubType>Form</SubType>
@@ -176,6 +176,9 @@
     <Compile Include="src\SinhvienHp.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\sysdiagram.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\TaiKhoan.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -194,8 +197,8 @@
     <EmbeddedResource Include="src\GUI\UserManager.resx">
       <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\GUI\subject management.resx">
-      <DependentUpon>subject management.cs</DependentUpon>
+    <EmbeddedResource Include="src\GUI\SubjectManager.resx">
+      <DependentUpon>SubjectManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\GUI\Teaching schedule.resx">
       <DependentUpon>Teaching schedule.cs</DependentUpon>

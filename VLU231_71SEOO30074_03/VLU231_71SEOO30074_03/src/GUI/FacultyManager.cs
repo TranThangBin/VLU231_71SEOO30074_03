@@ -70,10 +70,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
 
         private void FacultyManager_Load(object sender, EventArgs e)
         {
-            foreach (Khoa khoa in KhoaBUS.Khoas)
+            KhoaBUS.UseKhoas(khoas =>
             {
-                dgvKhoa.Rows.Add(khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
-            }
+                foreach (Khoa khoa in khoas)
+                {
+                    dgvKhoa.Rows.Add(khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
+                }
+            });
         }
 
         private void btnThem_Click(object sender, EventArgs e)

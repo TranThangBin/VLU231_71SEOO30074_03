@@ -185,6 +185,7 @@
             this.dgvKhoa.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvKhoa.Location = new System.Drawing.Point(0, 173);
             this.dgvKhoa.Name = "dgvKhoa";
+            this.dgvKhoa.ReadOnly = true;
             this.dgvKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhoa.Size = new System.Drawing.Size(800, 277);
             this.dgvKhoa.TabIndex = 8;
@@ -194,18 +195,21 @@
             // 
             this.maKhoa.HeaderText = "Mã khoa";
             this.maKhoa.Name = "maKhoa";
+            this.maKhoa.ReadOnly = true;
             this.maKhoa.Width = 150;
             // 
             // tenGoi
             // 
             this.tenGoi.HeaderText = "Tên gọi";
             this.tenGoi.Name = "tenGoi";
+            this.tenGoi.ReadOnly = true;
             this.tenGoi.Width = 150;
             // 
             // Sdt
             // 
             this.Sdt.HeaderText = "Số điện thoại";
             this.Sdt.Name = "Sdt";
+            this.Sdt.ReadOnly = true;
             this.Sdt.Width = 150;
             // 
             // diaDiemVp
@@ -213,6 +217,7 @@
             this.diaDiemVp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.diaDiemVp.HeaderText = "Địa điểm văn phòng";
             this.diaDiemVp.Name = "diaDiemVp";
+            this.diaDiemVp.ReadOnly = true;
             // 
             // FacultyManager
             // 
@@ -253,10 +258,6 @@
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtDiaDiemVp;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sdtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diadiemVpDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnTroVe;
         private System.Windows.Forms.Button btnHuyChon;
         private System.Windows.Forms.Button btnSua;

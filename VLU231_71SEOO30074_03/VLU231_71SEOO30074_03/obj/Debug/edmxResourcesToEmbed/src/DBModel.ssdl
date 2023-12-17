@@ -52,11 +52,11 @@
     <Property Name="Ma" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="MaKhoa" Type="varchar" MaxLength="20" />
     <Property Name="Loai" Type="tinyint" Nullable="false" />
-    <Property Name="HoTen" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
     <Property Name="NgaySinh" Type="date" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" Nullable="false" />
-    <Property Name="QueQuan" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="DiaChi" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="SinhvienHp">
     <Key>
@@ -65,6 +65,16 @@
     </Key>
     <Property Name="MaSinhVien" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="MaHp" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -204,6 +214,7 @@
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhvienHp" EntityType="Self.SinhvienHp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Diem__59063A47" Association="Self.FK__Diem__59063A47">
       <End Role="SinhvienHp" EntitySet="SinhvienHp" />

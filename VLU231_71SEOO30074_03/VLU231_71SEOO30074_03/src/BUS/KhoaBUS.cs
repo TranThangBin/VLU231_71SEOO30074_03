@@ -1,18 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Data.Entity;
 
 namespace VLU231_71SEOO30074_03.src.BUS
 {
     internal class KhoaBUS
     {
-        public static List<Khoa> Khoas
+        public static void UseKhoas(Action<DbSet<Khoa>> callback)
         {
-            get
+            using (var db = new QLDKHPEntities())
             {
-                using (var db = new QLDKHPEntities())
-                {
-                    return db.Khoas.ToList();
-                }
+                callback(db.Khoas);
             }
         }
 

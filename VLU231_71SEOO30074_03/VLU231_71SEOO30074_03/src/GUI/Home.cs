@@ -37,7 +37,7 @@ namespace VLU231_71SEOO30074_03.src.GUI
                     lblMa.Text = "MSGV:";
                     txtKhoa.Text = AuthBUS.User.Khoa.Ten;
                     pnlKhoa.Visible =
-                        dkldMenuItem.Visible =
+                        dkdMenuItem.Visible =
                         tchpMenuItem.Visible =
                         tchpMenuItem.Visible =
                             true;
@@ -85,6 +85,14 @@ namespace VLU231_71SEOO30074_03.src.GUI
             userManager.FormClosing += childForm_FormClosing;
             Hide();
             userManager.Show();
+        }
+
+        private void qlmhMenuItem_Click(object sender, EventArgs e)
+        {
+            SubjectManager subjectManager = new SubjectManager();
+            subjectManager.FormClosing += childForm_FormClosing;
+            Hide();
+            subjectManager.Show();
         }
     }
 }

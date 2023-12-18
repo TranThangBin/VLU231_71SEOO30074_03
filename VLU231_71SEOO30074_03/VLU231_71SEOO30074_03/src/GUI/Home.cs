@@ -137,5 +137,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
             Hide();
             studentClassLookUp.Show();
         }
+
+        private void tchpGvMenuItem_Click(object sender, EventArgs e)
+        {
+            LecturerClassLookUp lecturerClassLookUp = new LecturerClassLookUp();
+            lecturerClassLookUp.FormClosing += childForm_FormClosing;
+            Hide();
+            lecturerClassLookUp.Show();
+        }
     }
 }

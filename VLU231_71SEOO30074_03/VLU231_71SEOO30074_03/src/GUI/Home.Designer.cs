@@ -31,6 +31,7 @@
             this.navMenu = new System.Windows.Forms.MenuStrip();
             this.dkhpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dkdMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tchpSvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tchpGvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlKhoaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qlNgDMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tchpSvMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navMenu.SuspendLayout();
             this.pnlKhoa.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,12 +101,21 @@
             this.dkdMenuItem.Visible = false;
             this.dkdMenuItem.Click += new System.EventHandler(this.dkdMenuItem_Click);
             // 
+            // tchpSvMenuItem
+            // 
+            this.tchpSvMenuItem.Name = "tchpSvMenuItem";
+            this.tchpSvMenuItem.Size = new System.Drawing.Size(125, 19);
+            this.tchpSvMenuItem.Text = "Tra Cứu Học Phần ";
+            this.tchpSvMenuItem.Visible = false;
+            this.tchpSvMenuItem.Click += new System.EventHandler(this.tchpSvMenuItem_Click);
+            // 
             // tchpGvMenuItem
             // 
             this.tchpGvMenuItem.Name = "tchpGvMenuItem";
             this.tchpGvMenuItem.Size = new System.Drawing.Size(125, 19);
             this.tchpGvMenuItem.Text = "Tra Cứu Học Phần ";
             this.tchpGvMenuItem.Visible = false;
+            this.tchpGvMenuItem.Click += new System.EventHandler(this.tchpGvMenuItem_Click);
             // 
             // qlKhoaMenuItem
             // 
@@ -337,14 +346,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            // 
-            // tchpSvMenuItem
-            // 
-            this.tchpSvMenuItem.Name = "tchpSvMenuItem";
-            this.tchpSvMenuItem.Size = new System.Drawing.Size(125, 19);
-            this.tchpSvMenuItem.Text = "Tra Cứu Học Phần ";
-            this.tchpSvMenuItem.Visible = false;
-            this.tchpSvMenuItem.Click += new System.EventHandler(this.tchpSvMenuItem_Click);
             // 
             // Home
             // 

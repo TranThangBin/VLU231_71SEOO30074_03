@@ -38,11 +38,11 @@
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtDiaDiemVp = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnTroVe = new System.Windows.Forms.Button();
             this.btnHuyChon = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvKhoa = new System.Windows.Forms.DataGridView();
+            this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenGoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,13 +89,16 @@
             // txtMaKhoa
             // 
             this.txtMaKhoa.Location = new System.Drawing.Point(70, 40);
+            this.txtMaKhoa.MaxLength = 20;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Size = new System.Drawing.Size(288, 20);
             this.txtMaKhoa.TabIndex = 4;
+            this.txtMaKhoa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaKhoa_KeyPress);
             // 
             // txtTenGoi
             // 
             this.txtTenGoi.Location = new System.Drawing.Point(70, 77);
+            this.txtTenGoi.MaxLength = 50;
             this.txtTenGoi.Name = "txtTenGoi";
             this.txtTenGoi.Size = new System.Drawing.Size(288, 20);
             this.txtTenGoi.TabIndex = 5;
@@ -103,6 +106,7 @@
             // txtSdt
             // 
             this.txtSdt.Location = new System.Drawing.Point(500, 35);
+            this.txtSdt.MaxLength = 12;
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(288, 20);
             this.txtSdt.TabIndex = 6;
@@ -110,13 +114,14 @@
             // txtDiaDiemVp
             // 
             this.txtDiaDiemVp.Location = new System.Drawing.Point(500, 81);
+            this.txtDiaDiemVp.MaxLength = 100;
             this.txtDiaDiemVp.Name = "txtDiaDiemVp";
             this.txtDiaDiemVp.Size = new System.Drawing.Size(288, 20);
             this.txtDiaDiemVp.TabIndex = 7;
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(133, 125);
+            this.btnThem.Location = new System.Drawing.Point(176, 126);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 9;
@@ -124,19 +129,9 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnTroVe
-            // 
-            this.btnTroVe.Location = new System.Drawing.Point(495, 125);
-            this.btnTroVe.Name = "btnTroVe";
-            this.btnTroVe.Size = new System.Drawing.Size(75, 23);
-            this.btnTroVe.TabIndex = 10;
-            this.btnTroVe.Text = "Trở về";
-            this.btnTroVe.UseVisualStyleBackColor = true;
-            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
-            // 
             // btnHuyChon
             // 
-            this.btnHuyChon.Location = new System.Drawing.Point(622, 125);
+            this.btnHuyChon.Location = new System.Drawing.Point(543, 126);
             this.btnHuyChon.Name = "btnHuyChon";
             this.btnHuyChon.Size = new System.Drawing.Size(75, 23);
             this.btnHuyChon.TabIndex = 11;
@@ -146,7 +141,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(253, 125);
+            this.btnSua.Location = new System.Drawing.Point(296, 126);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 12;
@@ -156,7 +151,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(373, 125);
+            this.btnXoa.Location = new System.Drawing.Point(416, 126);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
             this.btnXoa.TabIndex = 13;
@@ -178,6 +173,7 @@
             this.dgvKhoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKhoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.khoa,
             this.maKhoa,
             this.tenGoi,
             this.Sdt,
@@ -190,6 +186,14 @@
             this.dgvKhoa.Size = new System.Drawing.Size(800, 277);
             this.dgvKhoa.TabIndex = 8;
             this.dgvKhoa.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoa_CellEnter);
+            this.dgvKhoa.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvKhoa_RowsAdded);
+            // 
+            // khoa
+            // 
+            this.khoa.HeaderText = "Khoa";
+            this.khoa.Name = "khoa";
+            this.khoa.ReadOnly = true;
+            this.khoa.Visible = false;
             // 
             // maKhoa
             // 
@@ -227,7 +231,6 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnHuyChon);
-            this.Controls.Add(this.btnTroVe);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvKhoa);
             this.Controls.Add(this.txtDiaDiemVp);
@@ -258,11 +261,11 @@
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtDiaDiemVp;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnTroVe;
         private System.Windows.Forms.Button btnHuyChon;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.DataGridView dgvKhoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn maKhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenGoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;

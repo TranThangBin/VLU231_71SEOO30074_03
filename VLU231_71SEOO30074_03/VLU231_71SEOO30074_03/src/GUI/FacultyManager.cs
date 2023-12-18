@@ -33,29 +33,13 @@ namespace VLU231_71SEOO30074_03.src.GUI
             };
         }
 
-        private Khoa dgvKhoa_SelectedValue()
+        private void dgvKhoa_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvKhoa.SelectedRows.Count <= 0)
             {
-                return null;
-            }
-            DataGridViewCellCollection cells = dgvKhoa.SelectedRows[0].Cells;
-            return new Khoa()
-            {
-                Ma = cells["maKhoa"].Value + "",
-                Ten = cells["tenGoi"].Value + "",
-                Sdt = cells["sdt"].Value + "",
-                DiadiemVp = cells["diaDiemVp"].Value + "",
-            };
-        }
-
-        private void dgvKhoa_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            Khoa selectedKhoa = dgvKhoa_SelectedValue();
-            if (selectedKhoa == null)
-            {
                 return;
             }
+            Khoa selectedKhoa = (Khoa)dgvKhoa.SelectedRows[0].Cells["khoa"].Value;
             txtMaKhoa.Enabled = false;
             txtMaKhoa.Text = selectedKhoa.Ma;
             txtTenGoi.Text = selectedKhoa.Ten;
@@ -74,42 +58,83 @@ namespace VLU231_71SEOO30074_03.src.GUI
             {
                 foreach (Khoa khoa in khoas)
                 {
-                    dgvKhoa.Rows.Add(khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
+                    dgvKhoa.Rows.Add(khoa);
                 }
             });
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (
+                MessageBox.Show("Bạn muốn thêm khoa", "Xác nhận", MessageBoxButtons.YesNoCancel)
+                != DialogResult.Yes
+            )
+            {
+                return;
+            }
             Khoa khoa = GetKhoa();
-            KhoaBUS.InsertKhoa(khoa);
-            dgvKhoa.Rows.Add(khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
+            Result<Khoa> result = KhoaBUS.InsertKhoa(khoa);
+            if (result.IsError())
+            {
+                MessageBox.Show(result.Error.Message);
+                return;
+            }
+            MessageBox.Show("Thêm khoa thành công");
+            dgvKhoa.Rows.Add(result.Value);
             ClearInput();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Khoa selectedKhoa = dgvKhoa_SelectedValue();
-            if (selectedKhoa == null)
+            if (dgvKhoa.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Chưa chọn khoa để sửa");
+                return;
+            }
+            if (
+                MessageBox.Show("Bạn muốn sửa khoa", "Xác nhận", MessageBoxButtons.YesNoCancel)
+                != DialogResult.Yes
+            )
             {
                 return;
             }
+            Khoa selectedKhoa = (Khoa)dgvKhoa.SelectedRows[0].Cells["khoa"].Value;
             Khoa khoa = GetKhoa();
-            KhoaBUS.UpdateKhoa(selectedKhoa.Ma, khoa);
+            Result<Khoa> result = KhoaBUS.UpdateKhoa(selectedKhoa.Ma, khoa);
+            if (result.IsError())
+            {
+                MessageBox.Show(result.Error.Message);
+                return;
+            }
+            MessageBox.Show("Sửa khoa thành công");
             int selectedIndex = dgvKhoa.SelectedRows[0].Index;
             dgvKhoa.Rows.RemoveAt(selectedIndex);
-            dgvKhoa.Rows.Insert(selectedIndex, khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
+            dgvKhoa.Rows.Insert(selectedIndex, khoa);
             ClearInput();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            Khoa khoa = dgvKhoa_SelectedValue();
-            if (khoa == null)
+            if (dgvKhoa.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Chưa chọn khoa để xóa");
+                return;
+            }
+            if (
+                MessageBox.Show("Bạn muốn sửa xóa", "Xác nhận", MessageBoxButtons.YesNoCancel)
+                != DialogResult.Yes
+            )
             {
                 return;
             }
-            KhoaBUS.DeleteKhoa(khoa.Ma);
+            Khoa khoa = (Khoa)dgvKhoa.SelectedRows[0].Cells["khoa"].Value;
+            Result<Khoa> result = KhoaBUS.DeleteKhoa(khoa.Ma);
+            if (result.IsError())
+            {
+                MessageBox.Show(result.Error.Message);
+                return;
+            }
+            MessageBox.Show("Xóa thành công");
             dgvKhoa.Rows.Remove(dgvKhoa.SelectedRows[0]);
             ClearInput();
         }
@@ -117,6 +142,20 @@ namespace VLU231_71SEOO30074_03.src.GUI
         private void btnHuyChon_Click(object sender, EventArgs e)
         {
             ClearInput();
+        }
+
+        private void dgvKhoa_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            Khoa khoa = (Khoa)dgvKhoa.Rows[e.RowIndex].Cells["khoa"].Value;
+            dgvKhoa.Rows[e.RowIndex].SetValues(khoa, khoa.Ma, khoa.Ten, khoa.Sdt, khoa.DiadiemVp);
+        }
+
+        private void txtMaKhoa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

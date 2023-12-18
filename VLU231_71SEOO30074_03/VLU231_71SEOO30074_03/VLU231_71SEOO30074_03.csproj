@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="src\BUS\GiangVienHpBUS.cs" />
     <Compile Include="src\BUS\NguoiDungBUS.cs" />
+    <Compile Include="src\BUS\Result.cs" />
     <Compile Include="src\BUS\SinhVienHpBUS.cs" />
     <Compile Include="src\DBModel.Context.cs">
       <AutoGen>True</AutoGen>

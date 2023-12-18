@@ -22,35 +22,67 @@ namespace VLU231_71SEOO30074_03.src.BUS
             }
         }
 
-        public static void InsertNguoiDung(NguoiDung nguoiDung, LoaiNguoiDung loaiNguoiDung)
+        private static Error ValidateConstraint(NguoiDung nguoiDung)
+        {
+            if (nguoiDung.Ma.Length < 8)
+            {
+                return Error.New("Mã người dùng cần tối thiểu 8 ký tự");
+            }
+            if (string.IsNullOrEmpty(nguoiDung.HoTen))
+            {
+                return Error.New("Họ tên trống");
+            }
+            if (nguoiDung.NgaySinh > DateTime.Now)
+            {
+                return Error.New("Ngày sinh không được lớn hơn thời điểm hiện tại");
+            }
+            if (string.IsNullOrEmpty(nguoiDung.QueQuan))
+            {
+                return Error.New("Quê quán trống");
+            }
+            if (string.IsNullOrEmpty(nguoiDung.DiaChi))
+            {
+                return Error.New("Địa chỉ trống");
+            }
+            return null;
+        }
+
+        public static Result<NguoiDung> InsertNguoiDung(
+            NguoiDung nguoiDung,
+            LoaiNguoiDung loaiNguoiDung
+        )
         {
             using (var db = new QLDKHPEntities())
             {
-                db.NguoiDungs.Add(
-                    new NguoiDung()
-                    {
-                        Ma = nguoiDung.Ma,
-                        HoTen = nguoiDung.HoTen,
-                        MaKhoa = nguoiDung.MaKhoa,
-                        NgaySinh = nguoiDung.NgaySinh,
-                        GioiTinh = nguoiDung.GioiTinh,
-                        QueQuan = nguoiDung.QueQuan,
-                        DiaChi = nguoiDung.DiaChi,
-                        Loai = (byte)loaiNguoiDung,
-                    }
-                );
+                if (db.NguoiDungs.Any(ngDung => ngDung.Ma == nguoiDung.Ma))
+                {
+                    return Result<NguoiDung>.Failure("Đã tồn tại người dùng với mã trên");
+                }
+                Error error = ValidateConstraint(nguoiDung);
+                if (error != null)
+                {
+                    return Result<NguoiDung>.Failure(error);
+                }
+                nguoiDung.Loai = (byte)loaiNguoiDung;
+                NguoiDung ngD = db.NguoiDungs.Add(nguoiDung);
                 db.SaveChanges();
+                return Result<NguoiDung>.Success(ngD);
             }
         }
 
-        public static void UpdateNguoiDung(string maNgD, NguoiDung nguoiDungMoi)
+        public static Result<NguoiDung> UpdateNguoiDung(string maNgD, NguoiDung nguoiDungMoi)
         {
             using (var db = new QLDKHPEntities())
             {
                 NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
-                if (nguoiDung?.Loai != nguoiDungMoi.Loai)
+                if (nguoiDung == null)
                 {
-                    return;
+                    return Result<NguoiDung>.Failure("Không tìm thấy người dùng");
+                }
+                Error error = ValidateConstraint(nguoiDungMoi);
+                if (error != null)
+                {
+                    return Result<NguoiDung>.Failure(error);
                 }
                 nguoiDung.HoTen = nguoiDungMoi.HoTen;
                 nguoiDung.MaKhoa = nguoiDungMoi.MaKhoa;
@@ -59,71 +91,34 @@ namespace VLU231_71SEOO30074_03.src.BUS
                 nguoiDung.QueQuan = nguoiDungMoi.QueQuan;
                 nguoiDung.DiaChi = nguoiDungMoi.DiaChi;
                 db.SaveChanges();
+                return Result<NguoiDung>.Success(nguoiDung);
             }
         }
 
-        public static void DeleteNguoiDung(string maNgD)
+        public static Result<NguoiDung> DeleteNguoiDung(string maNgD)
         {
             using (var db = new QLDKHPEntities())
             {
                 NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
                 if (nguoiDung == null)
                 {
-                    return;
+                    return Result<NguoiDung>.Failure("Không tìm thấy người dùng");
+                }
+                if (nguoiDung.LopHps.Count > 0)
+                {
+                    return Result<NguoiDung>.Failure(
+                        "Không thể xóa vì người dùng đã tham gia các lớp học phần"
+                    );
+                }
+                if (nguoiDung.TaiKhoan != null)
+                {
+                    return Result<NguoiDung>.Failure(
+                        "Cần phải xóa tài khoản trước khi xóa người dùng"
+                    );
                 }
                 db.NguoiDungs.Remove(nguoiDung);
                 db.SaveChanges();
-            }
-        }
-
-        public static TaiKhoan GetTaiKhoanNguoiDung(string maNgD)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                return db.TaiKhoans.Find(maNgD);
-            }
-        }
-
-        public static void InsertTaiKhoanNguoiDung(string maNgD, TaiKhoan taiKhoan)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                NguoiDung nguoiDung = db.NguoiDungs.Find(maNgD);
-                if (nguoiDung == null)
-                {
-                    return;
-                }
-                nguoiDung.TaiKhoan = taiKhoan;
-                db.SaveChanges();
-            }
-        }
-
-        public static void UpdateTaiKhoanNguoiDung(string maNgD, TaiKhoan taiKhoanMoi)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                TaiKhoan taiKhoan = db.TaiKhoans.Find(maNgD);
-                if (taiKhoan == null)
-                {
-                    return;
-                }
-                taiKhoan.TenTk = taiKhoanMoi.TenTk;
-                taiKhoan.MatKhau = taiKhoanMoi.MatKhau;
-                db.SaveChanges();
-            }
-        }
-
-        public static void DeleteTaiKhoanNguoiDung(string maNgD)
-        {
-            using (var db = new QLDKHPEntities())
-            {
-                TaiKhoan taiKhoan = db.TaiKhoans.Find(maNgD);
-                if (taiKhoan == null)
-                {
-                    return;
-                }
-                db.TaiKhoans.Remove(taiKhoan);
-                db.SaveChanges();
+                return Result<NguoiDung>.Success(nguoiDung);
             }
         }
     }

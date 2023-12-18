@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnXoaNgD = new System.Windows.Forms.Button();
             this.btnSuaNgD = new System.Windows.Forms.Button();
             this.btnThemNgD = new System.Windows.Forms.Button();
             this.dgvNguoiDung = new System.Windows.Forms.DataGridView();
+            this.nguoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNgD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.khoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.queQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,19 +132,19 @@
             // 
             this.dgvNguoiDung.AllowUserToAddRows = false;
             this.dgvNguoiDung.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNguoiDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNguoiDung.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNguoiDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNguoiDung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nguoiDung,
             this.maNgD,
             this.hoTen,
-            this.khoa,
             this.ngaySinh,
             this.gioiTinh,
             this.queQuan,
@@ -158,12 +158,19 @@
             this.dgvNguoiDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNguoiDung.Size = new System.Drawing.Size(737, 117);
             this.dgvNguoiDung.TabIndex = 0;
-            this.dgvNguoiDung.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiDung_CellContentClick);
             this.dgvNguoiDung.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiDung_CellEnter);
+            this.dgvNguoiDung.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvNguoiDung_RowsAdded);
+            // 
+            // nguoiDung
+            // 
+            this.nguoiDung.HeaderText = "nguoiDung";
+            this.nguoiDung.Name = "nguoiDung";
+            this.nguoiDung.ReadOnly = true;
+            this.nguoiDung.Visible = false;
             // 
             // maNgD
             // 
-            this.maNgD.HeaderText = "Mã sinh viên";
+            this.maNgD.HeaderText = "Mã";
             this.maNgD.Name = "maNgD";
             this.maNgD.ReadOnly = true;
             // 
@@ -172,12 +179,6 @@
             this.hoTen.HeaderText = "Họ tên";
             this.hoTen.Name = "hoTen";
             this.hoTen.ReadOnly = true;
-            // 
-            // khoa
-            // 
-            this.khoa.HeaderText = "Khoa";
-            this.khoa.Name = "khoa";
-            this.khoa.ReadOnly = true;
             // 
             // ngaySinh
             // 
@@ -294,6 +295,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(304, 116);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(158, 20);
             this.txtDiaChi.TabIndex = 17;
@@ -315,6 +317,7 @@
             this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueQuan.Location = new System.Drawing.Point(304, 91);
             this.txtQueQuan.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQueQuan.MaxLength = 50;
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(158, 20);
             this.txtQueQuan.TabIndex = 15;
@@ -336,6 +339,7 @@
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(101, 91);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHoTen.MaxLength = 50;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(128, 20);
             this.txtHoTen.TabIndex = 13;
@@ -385,15 +389,18 @@
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(128, 21);
             this.cmbKhoa.TabIndex = 8;
+            this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // txtMaSv
             // 
             this.txtMaSv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSv.Location = new System.Drawing.Point(101, 62);
             this.txtMaSv.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaSv.MaxLength = 20;
             this.txtMaSv.Name = "txtMaSv";
             this.txtMaSv.Size = new System.Drawing.Size(128, 20);
             this.txtMaSv.TabIndex = 6;
+            this.txtMaSv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHandleSpace_KeyPress);
             // 
             // label5
             // 
@@ -472,7 +479,6 @@
             this.rdBtnShowPw.Name = "rdBtnShowPw";
             this.rdBtnShowPw.Size = new System.Drawing.Size(108, 17);
             this.rdBtnShowPw.TabIndex = 17;
-            this.rdBtnShowPw.TabStop = true;
             this.rdBtnShowPw.Text = "Hiển thị mật khẩu";
             this.rdBtnShowPw.UseVisualStyleBackColor = true;
             this.rdBtnShowPw.Click += new System.EventHandler(this.rdBtnShowPw_Click);
@@ -495,10 +501,12 @@
             this.txtMk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMk.Location = new System.Drawing.Point(90, 74);
             this.txtMk.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMk.MaxLength = 50;
             this.txtMk.Name = "txtMk";
             this.txtMk.PasswordChar = '*';
             this.txtMk.Size = new System.Drawing.Size(158, 20);
             this.txtMk.TabIndex = 15;
+            this.txtMk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHandleSpace_KeyPress);
             // 
             // label2
             // 
@@ -518,9 +526,11 @@
             this.txtTk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTk.Location = new System.Drawing.Point(90, 38);
             this.txtTk.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTk.MaxLength = 50;
             this.txtTk.Name = "txtTk";
             this.txtTk.Size = new System.Drawing.Size(158, 20);
             this.txtTk.TabIndex = 13;
+            this.txtTk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHandleSpace_KeyPress);
             // 
             // flowLayoutPanel2
             // 
@@ -537,6 +547,7 @@
             // btnTaoTk
             // 
             this.btnTaoTk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnTaoTk.Enabled = false;
             this.btnTaoTk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnTaoTk.ForeColor = System.Drawing.Color.White;
             this.btnTaoTk.Location = new System.Drawing.Point(8, 8);
@@ -551,6 +562,7 @@
             // btnSuaTk
             // 
             this.btnSuaTk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSuaTk.Enabled = false;
             this.btnSuaTk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnSuaTk.ForeColor = System.Drawing.Color.White;
             this.btnSuaTk.Location = new System.Drawing.Point(74, 8);
@@ -565,6 +577,7 @@
             // btnXoaTk
             // 
             this.btnXoaTk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXoaTk.Enabled = false;
             this.btnXoaTk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnXoaTk.ForeColor = System.Drawing.Color.White;
             this.btnXoaTk.Location = new System.Drawing.Point(140, 8);
@@ -613,7 +626,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserManager";
             this.Text = "Quản lý người dùng";
-            this.Load += new System.EventHandler(this.StudenManager_Load);
+            this.Load += new System.EventHandler(this.UserManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguoiDung)).EndInit();
             this.groupBoxSV.ResumeLayout(false);
             this.groupBoxSV.PerformLayout();
@@ -664,14 +677,14 @@
         private System.Windows.Forms.Button btnHuyChon;
         private System.Windows.Forms.ComboBox cmbDoiTuong;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nguoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn maNgD;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn khoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn gioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn queQuan;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel1;
     }
 }
